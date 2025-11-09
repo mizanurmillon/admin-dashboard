@@ -9,318 +9,20 @@
                     <h3>Default Dashboard</h3>
                 </div>
                 <div class="col-5 d-none d-xl-block">
-                    <!-- Page Sub Header Start-->
-                    <div class="left-header main-sub-header p-0">
-                        <div class="left-menu-header">
-                            <ul class="header-left">
-                                <li class="onhover-dropdown"> <span class="f-w-700">General </span>
-                                    <ul class="onhover-show-div left-dropdown">
-                                        <li class="flyout-right"><a href="#">Dashboards</a><i
-                                                class="fa fa-angle-right"></i>
-                                            <ul>
-                                                <li> <a href="index.html">Default </a></li>
-                                                <li> <a href="dashboard-02.html">Ecommerce</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="flyout-right"><a href="#">Widgets</a><i
-                                                class="fa fa-angle-right"></i>
-                                            <ul>
-                                                <li><a href="general-widget.html">General</a></li>
-                                                <li> <a href="chart-widget.html">chart</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="flyout-right"> <a href="#">Page layout</a><i
-                                                class="fa fa-angle-right"></i>
-                                            <ul>
-                                                <li> <a href="box-layout.html">Boxed </a></li>
-                                                <li> <a href="layout-rtl.html">RTL</a></li>
-                                                <li> <a href="layout-dark.html">Dark Layout</a></li>
-                                                <li> <a href="footer-light.html">footer-light.html</a></li>
-                                                <li> <a href="footer-dark.html">footer-dark.html</a></li>
-                                                <li><a href="footer-fixed.html">footer-fixed.html</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="onhover-dropdown"><span class="f-w-700">Components</span>
-                                    <ul class="onhover-show-div left-dropdown">
-                                        <li class="flyout-right"><a href="#">Ui Kits</a>
-                                            <ul>
-                                                <li><a href="typography.html">Typography</a></li>
-                                                <li><a href="avatars.html">Avatars</a></li>
-                                                <li><a href="helper-classes.html">helper classes</a></li>
-                                                <li><a href="grid.html">Grid</a></li>
-                                                <li><a href="tag-pills.html">Tag & pills</a></li>
-                                                <li><a href="progress-bar.html">Progress</a></li>
-                                                <li><a href="modal.html">Modal</a></li>
-                                                <li><a href="alert.html">Alert</a></li>
-                                                <li><a href="popover.html">Popover</a></li>
-                                                <li><a href="tooltip.html">Tooltip</a></li>
-                                                <li><a href="dropdown.html">Dropdown</a></li>
-                                                <li><a href="according.html">Accordion</a></li>
-                                                <li><a href="tab-bootstrap.html">Tabs</a></li>
-                                                <li><a href="list.html">Lists</a></li>
-                                            </ul><i class="fa fa-angle-right"></i>
-                                        </li>
-                                        <li class="flyout-right"><a href="#">Bonus Ui</a>
-                                            <ul>
-                                                <li><a href="scrollable.html">Scrollable</a></li>
-                                                <li><a href="tree.html">Tree view</a></li>
-                                                <li><a href="toasts.html">Toasts</a></li>
-                                                <li><a href="rating.html">Rating</a></li>
-                                                <li><a href="dropzone.html">dropzone</a></li>
-                                                <li><a href="tour.html">Tour</a></li>
-                                                <li><a href="sweet-alert2.html">SweetAlert2</a></li>
-                                                <li><a href="modal-animated.html">Animated Modal</a></li>
-                                                <li><a href="owl-carousel.html">Owl Carousel</a></li>
-                                                <li><a href="ribbons.html">Ribbons</a></li>
-                                                <li><a href="pagination.html">Pagination</a></li>
-                                                <li><a href="breadcrumb.html">Breadcrumb</a></li>
-                                                <li><a href="range-slider.html">Range Slider</a></li>
-                                                <li><a href="image-cropper.html">Image cropper</a></li>
-                                                <li><a href="basic-card.html">Basic Card</a></li>
-                                                <li><a href="creative-card.html">Creative Card</a></li>
-                                                <li><a href="dragable-card.html">Draggable Card</a></li>
-                                                <li><a href="timeline-v-1.html">Timeline </a></li>
-                                            </ul><i class="fa fa-angle-right"></i>
-                                        </li>
-                                        <li class="flyout-right"><a href="#">Animation</a>
-                                            <ul>
-                                                <li><a href="animate.html">Animate</a></li>
-                                                <li><a href="scroll-reval.html">Scroll Reveal</a></li>
-                                                <li><a href="AOS.html">AOS animation</a></li>
-                                                <li><a href="tilt.html">Tilt Animation</a></li>
-                                                <li><a href="wow.html">Wow Animation</a></li>
-                                            </ul><i class="fa fa-angle-right"></i>
-                                        </li>
-                                        <li class="flyout-right"><a href="#">Icons</a>
-                                            <ul>
-                                                <li><a href="flag-icon.html">Flag icon</a></li>
-                                                <li><a href="font-awesome.html">Fontawesome Icon</a></li>
-                                                <li><a href="ico-icon.html">Ico Icon</a></li>
-                                                <li><a href="themify-icon.html">Themify Icon</a></li>
-                                                <li><a href="feather-icon.html">Feather icon</a></li>
-                                                <li><a href="whether-icon.html">Whether Icon</a></li>
-                                            </ul><i class="fa fa-angle-right"></i>
-                                        </li>
-                                        <li class="flyout-right"><a href="#">Buttons</a>
-                                            <ul>
-                                                <li><a href="buttons.html">Default Style</a></li>
-                                                <li><a href="button-group.html">Button Group</a></li>
-                                            </ul><i class="fa fa-angle-right"></i>
-                                        </li>
-                                        <li class="flyout-right"><a href="#">Charts</a>
-                                            <ul>
-                                                <li><a href="echarts.html">Echarts</a></li>
-                                                <li><a href="chart-apex.html">Apex Chart</a></li>
-                                                <li><a href="chart-google.html">Google Chart</a></li>
-                                                <li><a href="chart-sparkline.html">Sparkline chart</a></li>
-                                                <li><a href="chart-flot.html">Flot Chart </a></li>
-                                                <li><a href="chart-knob.html">Knob Chart</a></li>
-                                                <li><a href="chart-morris.html">Morris Chart</a></li>
-                                                <li><a href="chartjs.html">Chatjs Chart</a></li>
-                                                <li><a href="chartist.html">Chartist Chart</a></li>
-                                                <li><a href="chart-peity.html">Peity Chart</a></li>
-                                            </ul><i class="fa fa-angle-right"></i>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="onhover-dropdown"> <span class="f-w-700">Applications</span>
-                                    <ul class="onhover-show-div left-dropdown">
-                                        <li class="flyout-right"><a href="#">Project</a>
-                                            <ul>
-                                                <li><a href="projects.html">Project List</a></li>
-                                                <li><a href="projectcreate.html">Create new</a></li>
-                                            </ul><i class="fa fa-angle-right"></i>
-                                        </li>
-                                        <li><a href="file-manager.html">File manager</a></li>
-                                        <li><a href="kanban.html">kanban Board </a></li>
-                                        <li class="flyout-right"> <a href="#">Ecommerce </a>
-                                            <ul>
-                                                <li><a href="add-products.html">Add Product</a></li>
-                                                <li><a href="product.html">Product</a></li>
-                                                <li><a href="product-page.html">Product page</a></li>
-                                                <li><a href="list-products.html">Product list</a></li>
-                                                <li><a href="payment-details.html">Payment Details</a></li>
-                                                <li><a href="order-history.html">Order History</a></li>
-                                                <li class="flyout-right"><a class="submenu-title"
-                                                        href="#">Invoices</a>
-                                                    <ul>
-                                                        <li><a href="invoice-1.html">Invoice-1</a></li>
-                                                        <li><a href="invoice-2.html">Invoice-2</a></li>
-                                                        <li><a href="invoice-3.html">Invoice-3</a></li>
-                                                        <li><a href="invoice-4.html">Invoice-4</a></li>
-                                                        <li><a href="invoice-5.html">Invoice-5</a></li>
-                                                        <li><a href="invoice-template.html">Invoice-6</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="cart.html">Cart</a></li>
-                                                <li><a href="list-wish.html">Wishlist</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="pricing.html">Pricing </a></li>
-                                            </ul><i class="fa fa-angle-right"></i>
-                                        </li>
-                                        <li class="flyout-right"><a href="#">Email</a>
-                                            <ul>
-                                                <li><a href="letter-box.html">Email App</a></li>
-                                                <li><a href="email-compose.html">Email Compose</a></li>
-                                                <li><a href="letter-box.html">Letter Box</a></li>
-                                            </ul><i class="fa fa-angle-right"> </i>
-                                        </li>
-                                        <li class="flyout-right"> <a href="#">Chat</a>
-                                            <ul>
-                                                <li><a href="private-chat.html">Private Chat</a></li>
-                                                <li><a href="group-chat.html">Group Chat</a></li>
-                                            </ul><i class="fa fa-angle-right"></i>
-                                        </li>
-                                        <li class="flyout-right"><a href="#">User</a>
-                                            <ul>
-                                                <li><a href="user-profile.html">Users Profile</a></li>
-                                                <li><a href="edit-profile.html">Users Edit</a></li>
-                                                <li><a href="user-cards.html">Users Cards</a></li>
-                                            </ul><i class="fa fa-angle-right"> </i>
-                                        </li>
-                                        <li><a href="bookmark.html">Bookmarks</a></li>
-                                        <li><a href="contacts.html">Contacts</a></li>
-                                        <li><a href="task.html">Task</a></li>
-                                        <li><a href="calendar-basic.html">Calendar</a></li>
-                                        <li><a href="social-app.html">Social-app</a></li>
-                                        <li><a href="to-do.html">To-Do</a></li>
-                                        <li><a href="search.html">Search Result</a></li>
-                                    </ul>
-                                </li>
-                                <li class="onhover-dropdown"><span class="f-w-700">Pages</span>
-                                    <ul class="onhover-show-div left-dropdown">
-                                        <li><a href="blog.html">Landing page</a></li>
-                                        <li><a href="blog-single.html">Sample page</a></li>
-                                        <li><a href="add-post.html">Starter kit</a></li>
-                                        <li class="flyout-right"><a href="#">Others </a><i
-                                                class="fa fa-angle-right"></i>
-                                            <ul>
-                                                <li class="flyout-right"><a href="#">Error Page</a>
-                                                    <ul>
-                                                        <li><a href="error-400.html">Error 400</a></li>
-                                                        <li><a href="error-401.html">Error 401</a></li>
-                                                        <li><a href="error-403.html">Error 403</a></li>
-                                                        <li><a href="error-404.html">Error 404</a></li>
-                                                        <li><a href="error-500.html">Error 500</a></li>
-                                                        <li><a href="error-503.html">Error 503</a></li>
-                                                    </ul><i class="fa fa-angle-right"> </i>
-                                                </li>
-                                                <li class="flyout-right"> <a href="#">Authentication</a>
-                                                    <ul>
-                                                        <li><a href="login.html" target="_blank">Login Simple</a></li>
-                                                        <li><a href="login_one.html" target="_blank">Login with bg
-                                                                image</a></li>
-                                                        <li><a href="login_two.html" target="_blank">Login with image two
-                                                            </a></li>
-                                                        <li><a href="login-bs-validation.html" target="_blank">Login With
-                                                                validation</a></li>
-                                                        <li><a href="login-bs-tt-validation.html" target="_blank">Login
-                                                                with tooltip</a></li>
-                                                        <li><a href="login-sa-validation.html" target="_blank">Login with
-                                                                sweetalert</a></li>
-                                                        <li><a href="sign-up.html" target="_blank">Register Simple</a>
-                                                        </li>
-                                                        <li><a href="sign-up-one.html" target="_blank">Register with Bg
-                                                                Image </a></li>
-                                                        <li><a href="sign-up-two.html" target="_blank">Register with image
-                                                                two</a></li>
-                                                        <li><a href="sign-up-wizard.html" target="_blank">Register
-                                                                wizard</a></li>
-                                                        <li><a href="unlock.html">Unlock User</a></li>
-                                                        <li><a href="forget-password.html">Forget Password</a></li>
-                                                        <li><a href="reset-password.html">Reset Password</a></li>
-                                                        <li><a href="maintenance.html">Maintenance</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="flyout-right"> <a href="#">Coming Soon</a>
-                                                    <ul>
-                                                        <li><a href="comingsoon.html">Coming Simple</a></li>
-                                                        <li><a href="comingsoon-bg-video.html">Coming with Bg video</a>
-                                                        </li>
-                                                        <li><a href="comingsoon-bg-img.html">Coming with Bg Image</a></li>
-                                                    </ul><i class="fa fa-angle-right"> </i>
-                                                </li>
-                                                <li class="flyout-right"><a href="#">Email templates</a>
-                                                    <ul>
-                                                        <li><a href="basic-template.html">Basic Email</a></li>
-                                                        <li><a href="email-header.html">Basic With Header</a></li>
-                                                        <li><a href="template-email.html">Ecomerce Template</a></li>
-                                                        <li><a href="template-email-2.html">Email Template 2</a></li>
-                                                        <li><a href="ecommerce-templates.html">Ecommerce Email</a></li>
-                                                        <li><a href="email-order-success.html">Order Success</a></li>
-                                                    </ul><i class="fa fa-angle-right"></i>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="onhover-dropdown p-0"><span class="f-w-700">Miscellaneous</span>
-                                    <ul class="onhover-show-div left-dropdown">
-                                        <li class="flyout-right"><a href="#">Gallery</a>
-                                            <ul>
-                                                <li><a href="gallery.html">Gallery Grid</a></li>
-                                                <li><a href="gallery-with-description.html">gallery-with-description</a>
-                                                </li>
-                                                <li><a href="gallery-masonry.html">gallery-masonry</a></li>
-                                                <li><a href="masonry-gallery-with-disc.html">masonry-gallery-with-disc</a>
-                                                </li>
-                                                <li><a href="gallery-hover.html">gallery-hover</a></li>
-                                            </ul><i class="fa fa-angle-right"></i>
-                                        </li>
-                                        <li class="flyout-right"><a href="#">Blog</a>
-                                            <ul>
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="blog-single.html">blog-single</a></li>
-                                                <li><a href="add-post.html">add-post</a></li>
-                                            </ul><i class="fa fa-angle-right"></i>
-                                        </li>
-                                        <li><a href="FAQ.html">FAQ</a></li>
-                                        <li class="flyout-right"><a href="#">Job Search</a>
-                                            <ul>
-                                                <li><a href="job-cards-view.html">job-cards-view</a></li>
-                                                <li><a href="job-list-view.html">job-list-view</a></li>
-                                                <li><a href="job-details.html">job-details</a></li>
-                                                <li><a href="job-apply.html">job-apply</a></li>
-                                            </ul><i class="fa fa-angle-right"></i>
-                                        </li>
-                                        <li class="flyout-right"><a href="#">Job Search</a>
-                                            <ul>
-                                                <li><a href="job-cards-view.html">learning-list</a></li>
-                                                <li><a href="learning-detailed.html">learning-detailed</a></li>
-                                            </ul><i class="fa fa-angle-right"></i>
-                                        </li>
-                                        <li class="flyout-right"><a href="#">Maps</a>
-                                            <ul>
-                                                <li><a href="map-js.html">Map-js</a></li>
-                                                <li><a href="vector-map.html">Vector Maps</a></li>
-                                            </ul><i class="fa fa-angle-right"></i>
-                                        </li>
-                                        <li class="flyout-right"><a href="#">Editors </a>
-                                            <ul>
-                                                <li><a href="summernote.html">Summer Note</a></li>
-                                                <li><a href="CK editor.html">CK editor</a></li>
-                                                <li><a href="simple-MDE.html">MDE editor</a></li>
-                                                <li><a href="ace-code-editor.html">ACE code editor </a></li>
-                                            </ul><i class="fa fa-angle-right"> </i>
-                                        </li>
-                                        <li><a href="knowledgebase.html">Knowledgebase </a></li>
-                                        <li> <a href="support-ticket">Support Ticket</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Page Sub Header end
-                      -->
+
                 </div>
                 <div class="col-xl-3 col-sm-5 box-col-4">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">
-                                <svg class="stroke-icon">
-                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#stroke-home') }}"></use>
-                                </svg></a></li>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                    fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                                    <path d="M10 12h4v4h-4z" />
+                                </svg>
+                            </a></li>
                         <li class="breadcrumb-item">Dashboard</li>
                         <li class="breadcrumb-item active">Default</li>
                     </ol>
@@ -342,9 +44,11 @@
                             </div>
                             <div class="col-md-7 premium-course-img">
                                 <div class="premium-message"><img class="img-fluid"
-                                        src="{{ asset('backend/assets/images/dashboard/massage.gif') }}" alt="massage"></div>
+                                        src="{{ asset('backend/assets/images/dashboard/massage.gif') }}" alt="massage">
+                                </div>
                                 <div class="premium-books"><img class="img-fluid"
-                                        src="{{ asset('backend/assets/images/dashboard/books.gif') }}" alt="books"></div>
+                                        src="{{ asset('backend/assets/images/dashboard/books.gif') }}" alt="books">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -358,8 +62,12 @@
                             <div class="dropdown icon-dropdown setting-menu">
                                 <button class="btn dropdown-toggle" id="userdropdown1" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg>
-                                        <use href="{{ asset('backend/assets/svg/icon-sprite.svg#setting') }}"></use>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                        viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                        <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                                     </svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userdropdown1"><a
@@ -378,39 +86,56 @@
                                 <li class="activity-removed">
                                     <div class="recent-activity-data">
                                         <div class="activity-name"><span>
-                                                <svg>
-                                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Chat') }}"> </use>
-                                                </svg></span><a href="letter-box.html">Nick Mark mentioned Sara</a></div>
+
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                                    viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M12 11v.01" />
+                                                    <path d="M8 11v.01" />
+                                                    <path d="M16 11v.01" />
+                                                    <path
+                                                        d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3z" />
+                                                </svg>
+                                            </span><a href="letter-box.html">Nick Mark mentioned Sara</a></div>
                                         <div class="view-btn"><a href="#!">View
-                                                <svg>
-                                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Arrow-Right-2') }}"></use>
-                                                </svg></a></div>
+                                                <i class="fa fa-angle-right ms-2"></i></a></div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="recent-activity-data">
                                         <div class="activity-name"> <span>
-                                                <svg>
-                                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Download') }}"> </use>
-                                                </svg></span><a href="letter-box.html">The Post name was removed from the blog.</a>
+
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                                    viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+                                                    <path d="M7 11l5 5l5 -5" />
+                                                    <path d="M12 4l0 12" />
+                                                </svg>
+                                            </span><a href="letter-box.html">The Post name was removed from the
+                                                blog.</a>
                                         </div>
                                         <div class="view-btn"><a href="#!">View
-                                                <svg>
-                                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Arrow-Right-2') }}"></use>
-                                                </svg></a></div>
+                                                <i class="fa fa-angle-right ms-2"></i></a></div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="recent-activity-data">
                                         <div class="activity-name"><span>
-                                                <svg>
-                                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Swap') }}"> </use>
-                                                </svg></span><a href="letter-box.html">Patrick Sullivan published a new post.</a>
+
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                    viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M3 8l4 -4l4 4" />
+                                                    <path d="M7 4l0 9" />
+                                                    <path d="M13 16l4 4l4 -4" />
+                                                    <path d="M17 10l0 10" />
+                                                </svg>
+                                            </span><a href="letter-box.html">Patrick Sullivan published a new
+                                                post.</a>
                                         </div>
                                         <div class="view-btn"><a href="#!">View
-                                                <svg>
-                                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Arrow-Right-2') }}"></use>
-                                                </svg></a></div>
+                                                <i class="fa fa-angle-right ms-2"></i></a></div>
                                     </div>
                                 </li>
                             </ul>
@@ -423,26 +148,37 @@
                                 <li>
                                     <div class="recent-activity-data">
                                         <div class="activity-name"><span>
-                                                <svg>
-                                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Send') }}"> </use>
-                                                </svg></span><a href="letter-box.html">Nick Mark mentioned Sara</a></div>
+
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                                    viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M10 14l11 -11" />
+                                                    <path
+                                                        d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5" />
+                                                </svg>
+                                            </span><a href="letter-box.html">Nick Mark mentioned Sara</a></div>
                                         <div class="view-btn"><a href="#!">View
-                                                <svg>
-                                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Arrow-Right-2') }}"></use>
-                                                </svg></a></div>
+                                                <i class="fa fa-angle-right ms-2"></i></a></div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="recent-activity-data">
                                         <div class="activity-name"><span>
-                                                <svg>
-                                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Work') }}"> </use>
-                                                </svg></span><a href="letter-box.html">The Post name was removed from the blog.</a>
+
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                                    viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                    <path
+                                                        d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                                                    <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
+                                                    <path d="M12 12l0 .01" />
+                                                    <path d="M3 13a20 20 0 0 0 18 0" />
+                                                </svg>
+                                            </span><a href="letter-box.html">The Post name was removed from the
+                                                blog.</a>
                                         </div>
-                                        <div class="view-btn"> <a href="#!">View
-                                                <svg>
-                                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Arrow-Right-2') }}"></use>
-                                                </svg></a></div>
+                                        <div class="view-btn"><a href="#!">View
+                                                <i class="fa fa-angle-right ms-2"></i></a></div>
                                     </div>
                                 </li>
                             </ul>
@@ -458,8 +194,12 @@
                             <div class="dropdown icon-dropdown setting-menu">
                                 <button class="btn dropdown-toggle" id="userdropdown2" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg>
-                                        <use href="{{ asset('backend/assets/svg/icon-sprite.svg#setting') }}"> </use>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                        viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                        <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                                     </svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userdropdown2"><a
@@ -500,8 +240,12 @@
                             <div class="dropdown icon-dropdown setting-menu">
                                 <button class="btn dropdown-toggle" id="userdropdown3" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg>
-                                        <use href="{{ asset('backend/assets/svg/icon-sprite.svg#setting') }}"></use>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                        viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                        <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                                     </svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userdropdown3"><a
@@ -528,7 +272,8 @@
                                     <tr>
                                         <td>
                                             <div class="user-data">
-                                                <div><img src="{{ asset('backend/assets/images/dashboard/avtar/2.jpg') }}" alt="avatar">
+                                                <div><img src="{{ asset('backend/assets/images/dashboard/avtar/2.jpg') }}"
+                                                        alt="avatar">
                                                 </div>
                                                 <div> <a href="user-profile.html">
                                                         <h4>Dmitriy Groshev</h4>
@@ -556,7 +301,8 @@
                                     <tr>
                                         <td>
                                             <div class="user-data">
-                                                <div><img src="{{ asset('backend/assets/images/dashboard/avtar/17.jpg') }}" alt="avatar">
+                                                <div><img src="{{ asset('backend/assets/images/dashboard/avtar/17.jpg') }}"
+                                                        alt="avatar">
                                                 </div>
                                                 <div><a href="user-profile.html">
                                                         <h4>Patrick Beverley</h4>
@@ -584,7 +330,8 @@
                                     <tr>
                                         <td>
                                             <div class="user-data">
-                                                <div><img src="{{ asset('backend/assets/images/avtar/18.jpg') }}" alt="avatar"></div>
+                                                <div><img src="{{ asset('backend/assets/images/avtar/18.jpg') }}"
+                                                        alt="avatar"></div>
                                                 <div><a href="user-profile.html">
                                                         <h4>Kevin Greem</h4>
                                                     </a><span> Canada</span></div>
@@ -611,7 +358,8 @@
                                     <tr>
                                         <td>
                                             <div class="user-data">
-                                                <div><img src="{{ asset('backend/assets/images/dashboard/avtar/19.jpg') }}" alt="avatar">
+                                                <div><img src="{{ asset('backend/assets/images/dashboard/avtar/19.jpg') }}"
+                                                        alt="avatar">
                                                 </div>
                                                 <div><a href="user-profile.html">
                                                         <h4>William Barton</h4>
@@ -650,9 +398,15 @@
                             <div class="dropdown icon-dropdown setting-menu">
                                 <button class="btn dropdown-toggle" id="userdropdown4" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg>
-                                        <use href="{{ asset('backend/assets/svg/icon-sprite.svg#setting') }}"> </use>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                        viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                        <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                                     </svg>
+
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userdropdown4"><a
                                         class="dropdown-item" href="#">Weekly</a><a class="dropdown-item"
@@ -668,7 +422,8 @@
                                     <div class="monthly-data">
                                         <div class="invoice-data-icon"><span>
                                                 <svg>
-                                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#bookmark') }}"></use>
+                                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#bookmark') }}">
+                                                    </use>
                                                 </svg></span>
                                             <div><a href="invoice-1.html">
                                                     <h4>Camelun ios Development</h4>
@@ -683,7 +438,9 @@
                                     <div class="monthly-data">
                                         <div class="invoice-data-icon"><span>
                                                 <svg>
-                                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Ticket-Star') }}"></use>
+                                                    <use
+                                                        href="{{ asset('backend/assets/svg/icon-sprite.svg#Ticket-Star') }}">
+                                                    </use>
                                                 </svg></span>
                                             <div><a href="">
                                                     <h4>ReactDT Motions</h4>
@@ -698,7 +455,9 @@
                                     <div class="monthly-data">
                                         <div class="invoice-data-icon"><span>
                                                 <svg>
-                                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Discovery') }}"></use>
+                                                    <use
+                                                        href="{{ asset('backend/assets/svg/icon-sprite.svg#Discovery') }}">
+                                                    </use>
                                                 </svg></span>
                                             <div><a href="invoice-2.html">
                                                     <h4>Arocca Store</h4>
@@ -713,7 +472,9 @@
                                     <div class="monthly-data">
                                         <div class="invoice-data-icon"><span>
                                                 <svg>
-                                                    <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Shield-Done') }}"></use>
+                                                    <use
+                                                        href="{{ asset('backend/assets/svg/icon-sprite.svg#Shield-Done') }}">
+                                                    </use>
                                                 </svg></span>
                                             <div><a href="invoice-3.html">
                                                     <h4>EnterPress Project</h4>
@@ -728,7 +489,8 @@
                                     <button class="btn btn-outline-light txt-dark active w-100" type="button"><a
                                             class="d-flex gap-2 align-items-center" href="projects.html">
                                             <svg>
-                                                <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Plus-Circle') }}"></use>
+                                                <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Plus-Circle') }}">
+                                                </use>
                                             </svg>Add Project</a></button>
                                 </li>
                             </ul>
@@ -747,10 +509,12 @@
                                         Aug</span>
                                     <div class="custom-date">
                                         <svg>
-                                            <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Left-Arrow') }}"></use>
+                                            <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Left-Arrow') }}">
+                                            </use>
                                         </svg>
                                         <svg>
-                                            <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Right-Arrow') }}"></use>
+                                            <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Right-Arrow') }}">
+                                            </use>
                                         </svg>
                                     </div>
                                 </button>
@@ -774,7 +538,8 @@
                                 <li>
                                     <div class="arrow-down">
                                         <svg>
-                                            <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Arrow-Down') }}"></use>
+                                            <use href="{{ asset('backend/assets/svg/icon-sprite.svg#Arrow-Down') }}">
+                                            </use>
                                         </svg>
                                     </div><span>$1.750</span>
                                 </li>
@@ -792,8 +557,12 @@
                             <div class="dropdown icon-dropdown setting-menu">
                                 <button class="btn dropdown-toggle" id="userdropdown5" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg>
-                                        <use href="{{ asset('backend/assets/svg/icon-sprite.svg#setting') }}"></use>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                        viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                        <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                                     </svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userdropdown5"><a
@@ -808,7 +577,8 @@
                             <ul>
                                 <li>
                                     <div class="user-notification">
-                                        <div><img src="{{ asset('backend/assets/images/dashboard/avtar/2.jpg') }}" alt="avatar"></div>
+                                        <div><img src="{{ asset('backend/assets/images/dashboard/avtar/2.jpg') }}"
+                                                alt="avatar"></div>
                                         <div class="user-description"><a href="letter-box.html">
                                                 <h4>You have new comments in real finical law agency landing page design.
                                                 </h4>
@@ -824,7 +594,8 @@
                                 </li>
                                 <li>
                                     <div class="user-notification">
-                                        <div><img src="{{ asset('backend/assets/images/dashboard/avtar/17.jpg') }}" alt="avatar"></div>
+                                        <div><img src="{{ asset('backend/assets/images/dashboard/avtar/17.jpg') }}"
+                                                alt="avatar"></div>
                                         <div class="user-description"><a href="letter-box.html">
                                                 <h4>Congrats! you complete all task for today. just need to join meting.
                                                 </h4>
@@ -840,7 +611,8 @@
                                 </li>
                                 <li>
                                     <div class="user-notification">
-                                        <div> <img src="{{ asset('backend/assets/images/dashboard/avtar/18.jpg') }}" alt="avatar"></div>
+                                        <div> <img src="{{ asset('backend/assets/images/dashboard/avtar/18.jpg') }}"
+                                                alt="avatar"></div>
                                         <div class="user-description"><a href="letter-box.html">
                                                 <h4>You have new comments in real finical law agency landing page design.
                                                 </h4>
@@ -856,7 +628,8 @@
                                 </li>
                                 <li>
                                     <div class="user-notification">
-                                        <div><img src="{{ asset('backend/assets/images/dashboard/avtar/19.jpg') }}" alt="avatar"></div>
+                                        <div><img src="{{ asset('backend/assets/images/dashboard/avtar/19.jpg') }}"
+                                                alt="avatar"></div>
                                         <div class="user-description"><a href="letter-box.html">
                                                 <h4>Congrats! you complete all task for today. just need to join meting.
                                                 </h4>
@@ -883,8 +656,12 @@
                             <div class="dropdown icon-dropdown setting-menu">
                                 <button class="btn dropdown-toggle" id="userdropdown22" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg>
-                                        <use href="{{ asset('backend/assets/svg/icon-sprite.svg#setting') }}"></use>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                        viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                        <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                                     </svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userdropdown22"><a
@@ -915,13 +692,16 @@
                                             <div class="customers d-inline-block avatar-group">
                                                 <ul>
                                                     <li class="d-inline-block"><img class="img-40 rounded-circle"
-                                                            src="{{ asset('backend/assets/images/dashboard/avtar/8.jpg') }}" alt="">
+                                                            src="{{ asset('backend/assets/images/dashboard/avtar/8.jpg') }}"
+                                                            alt="">
                                                     </li>
                                                     <li class="d-inline-block"><img class="img-40 rounded-circle"
-                                                            src="{{ asset('backend/assets/images/dashboard/avtar/10.jpg') }}" alt="">
+                                                            src="{{ asset('backend/assets/images/dashboard/avtar/10.jpg') }}"
+                                                            alt="">
                                                     </li>
                                                     <li class="d-inline-block"><img class="img-40 rounded-circle"
-                                                            src="{{ asset('backend/assets/images/dashboard/avtar/2.jpg') }}" alt="">
+                                                            src="{{ asset('backend/assets/images/dashboard/avtar/2.jpg') }}"
+                                                            alt="">
                                                     </li>
                                                     <li class="d-inline-block">
                                                         <p>26+</p>
@@ -940,13 +720,16 @@
                                             <div class="customers d-inline-block avatar-group">
                                                 <ul>
                                                     <li class="d-inline-block"><img class="img-40 rounded-circle"
-                                                            src="{{ asset('backend/assets/images/dashboard/avtar/2.jpg') }}" alt="">
+                                                            src="{{ asset('backend/assets/images/dashboard/avtar/2.jpg') }}"
+                                                            alt="">
                                                     </li>
                                                     <li class="d-inline-block"><img class="img-40 rounded-circle"
-                                                            src="{{ asset('backend/assets/images/dashboard/avtar/20.jpg') }}" alt="">
+                                                            src="{{ asset('backend/assets/images/dashboard/avtar/20.jpg') }}"
+                                                            alt="">
                                                     </li>
                                                     <li class="d-inline-block"><img class="img-40 rounded-circle"
-                                                            src="{{ asset('backend/assets/images/dashboard/avtar/12.jpg') }}" alt="">
+                                                            src="{{ asset('backend/assets/images/dashboard/avtar/12.jpg') }}"
+                                                            alt="">
                                                     </li>
                                                     <li class="d-inline-block">
                                                         <p>6+</p>
@@ -965,10 +748,12 @@
                                             <div class="customers d-inline-block avatar-group">
                                                 <ul>
                                                     <li class="d-inline-block"><img class="img-40 rounded-circle"
-                                                            src="{{ asset('backend/assets/images/dashboard/avtar/14.jpg') }}" alt="">
+                                                            src="{{ asset('backend/assets/images/dashboard/avtar/14.jpg') }}"
+                                                            alt="">
                                                     </li>
                                                     <li class="d-inline-block"><img class="img-40 rounded-circle"
-                                                            src="{{ asset('backend/assets/images/dashboard/avtar/13.jpg') }}" alt="">
+                                                            src="{{ asset('backend/assets/images/dashboard/avtar/13.jpg') }}"
+                                                            alt="">
                                                     </li>
                                                 </ul>
                                             </div>
@@ -984,13 +769,16 @@
                                             <div class="customers d-inline-block avatar-group">
                                                 <ul>
                                                     <li class="d-inline-block"><img class="img-40 rounded-circle"
-                                                            src="{{ asset('backend/assets/images/dashboard/avtar/22.jpg') }}" alt="">
+                                                            src="{{ asset('backend/assets/images/dashboard/avtar/22.jpg') }}"
+                                                            alt="">
                                                     </li>
                                                     <li class="d-inline-block"><img class="img-40 rounded-circle"
-                                                            src="{{ asset('backend/assets/images/dashboard/avtar/15.jpg') }}" alt="">
+                                                            src="{{ asset('backend/assets/images/dashboard/avtar/15.jpg') }}"
+                                                            alt="">
                                                     </li>
                                                     <li class="d-inline-block"><img class="img-40 rounded-circle"
-                                                            src="{{ asset('backend/assets/images/dashboard/avtar/2.jpg') }}" alt="">
+                                                            src="{{ asset('backend/assets/images/dashboard/avtar/2.jpg') }}"
+                                                            alt="">
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1006,13 +794,16 @@
                                             <div class="customers d-inline-block avatar-group">
                                                 <ul>
                                                     <li class="d-inline-block"><img class="img-40 rounded-circle"
-                                                            src="{{ asset('backend/assets/images/dashboard/avtar/21.jpg') }}" alt="">
+                                                            src="{{ asset('backend/assets/images/dashboard/avtar/21.jpg') }}"
+                                                            alt="">
                                                     </li>
                                                     <li class="d-inline-block"><img class="img-40 rounded-circle"
-                                                            src="{{ asset('backend/assets/images/dashboard/avtar/23.jpg') }}" alt="">
+                                                            src="{{ asset('backend/assets/images/dashboard/avtar/23.jpg') }}"
+                                                            alt="">
                                                     </li>
                                                     <li class="d-inline-block"><img class="img-40 rounded-circle"
-                                                            src="{{ asset('backend/assets/images/dashboard/avtar/24.jpg') }}" alt="">
+                                                            src="{{ asset('backend/assets/images/dashboard/avtar/24.jpg') }}"
+                                                            alt="">
                                                     </li>
                                                     <li class="d-inline-block">
                                                         <p>5+ </p>
@@ -1038,8 +829,12 @@
                             <div class="dropdown icon-dropdown setting-menu">
                                 <button class="btn dropdown-toggle" id="userdropdown9" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    <svg>
-                                        <use href="{{ asset('backend/assets/svg/icon-sprite.svg#setting') }}"> </use>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                        viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                                        <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                                     </svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userdropdown9"><a

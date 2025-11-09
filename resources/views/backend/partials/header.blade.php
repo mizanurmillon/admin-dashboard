@@ -305,9 +305,9 @@
                             <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
                         </svg>
 
-                        <svg class="for-light" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                            fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round"
-                            stroke-linejoin="round">
+                        <svg class="for-light" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1"
+                            stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
                             <path
                                 d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
@@ -345,7 +345,18 @@
                             src="{{ asset('backend/assets/images/dashboard/profile.png') }}" alt="">
                         <div class="flex-grow-1 user"><span>Helen Walter</span>
                             <p class="mb-0 font-nunito">Admin
-                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(0.5099999999999995,0,0,0.5099999999999995,7.839999649524694,7.839929203987129)"><path d="M29.604 10.528 17.531 23.356a2.102 2.102 0 0 1-3.062 0L2.396 10.528c-.907-.964-.224-2.546 1.1-2.546h25.008c1.324 0 2.007 1.582 1.1 2.546z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0"
+                                    y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512"
+                                    xml:space="preserve" class="">
+                                    <g
+                                        transform="matrix(0.5099999999999995,0,0,0.5099999999999995,7.839999649524694,7.839929203987129)">
+                                        <path
+                                            d="M29.604 10.528 17.531 23.356a2.102 2.102 0 0 1-3.062 0L2.396 10.528c-.907-.964-.224-2.546 1.1-2.546h25.008c1.324 0 2.007 1.582 1.1 2.546z"
+                                            fill="#000000" opacity="1" data-original="#000000" class="">
+                                        </path>
+                                    </g>
+                                </svg>
                             </p>
                         </div>
                     </div>
@@ -354,7 +365,15 @@
                         <li><a href="letter-box.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
                         <li><a href="task.html"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
                         <li><a href="edit-profile.html"><i data-feather="settings"></i><span>Settings</span></a></li>
-                        <li><a href="login.html"> <i data-feather="log-in"></i><span>Log Out</span></a></li>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
+                                <li>
+                                    <i data-feather="log-out"></i>
+                                    <span>Log Out</span>
+                                </li>
+                            </button>
+                        </form>
                     </ul>
                 </li>
             </ul>
