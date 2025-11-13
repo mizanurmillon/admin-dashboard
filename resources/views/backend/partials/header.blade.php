@@ -1,7 +1,7 @@
 <div class="page-header">
     <div class="header-wrapper row m-0">
         <div class="header-logo-wrapper col-auto p-0">
-            <div class="logo-wrapper"><a href="index.html"> <img class="img-fluid for-light"
+            <div class="logo-wrapper"><a href="{{ route('admin.dashboard') }}"> <img class="img-fluid for-light"
                         src="{{ asset('backend/assets/images/logo/logo-icon.png') }}" alt=""><img
                         class="img-fluid for-dark" src="{{ asset('backend/assets/images/logo/logo_dark.png') }}"
                         alt=""></a></div>
@@ -140,163 +140,6 @@
                         </div>
                     </div>
                 </li>
-                <li class="onhover-dropdown">
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                        fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path
-                            d="M17.286 21.09q -1.69 .001 -5.288 -2.615q -3.596 2.617 -5.288 2.616q -2.726 0 -.495 -6.8q -9.389 -6.775 2.135 -6.775h.076q 1.785 -5.516 3.574 -5.516q 1.785 0 3.574 5.516h.076q 11.525 0 2.133 6.774q 2.23 6.802 -.497 6.8" />
-                    </svg>
-
-                    <div class="onhover-show-div bookmark-flip">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="front">
-                                    <h6 class="f-18 mb-0 dropdown-title">Bookmark</h6>
-                                    <ul class="bookmark-dropdown">
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-4 text-center"><a href="form-validation.html">
-                                                        <div class="bookmark-content">
-                                                            <div class="bookmark-icon bg-light-primary"><i
-                                                                    data-feather="file-text"></i></div>
-                                                            <span>Forms</span>
-                                                        </div>
-                                                    </a></div>
-                                                <div class="col-4 text-center"><a href="user-profile.html">
-                                                        <div class="bookmark-content">
-                                                            <div class="bookmark-icon bg-light-secondary"><i
-                                                                    data-feather="user"></i></div><span>Profile</span>
-                                                        </div>
-                                                    </a></div>
-                                                <div class="col-4 text-center"><a href="bootstrap-basic-table.html">
-                                                        <div class="bookmark-content">
-                                                            <div class="bookmark-icon bg-light-warning"> <i
-                                                                    data-feather="server"> </i></div><span>Tables
-                                                            </span>
-                                                        </div>
-                                                    </a></div>
-                                            </div>
-                                        </li>
-                                        <li class="text-centermedia-body"> <a class="flip-btn f-w-700" id="flip-btn"
-                                                href="javascript:void(0)">Add New Bookmark</a></li>
-                                    </ul>
-                                </div>
-                                <div class="back">
-                                    <ul>
-                                        <li>
-                                            <div class="bookmark-dropdown flip-back-content">
-                                                <input type="text" placeholder="search...">
-                                            </div>
-                                        </li>
-                                        <li><a class="f-w-700 d-block flip-back" id="flip-back"
-                                                href="javascript:void(0)">Back</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="onhover-dropdown">
-                    <div class="message position-relative">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                            fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
-                            <path d="M3 7l9 6l9 -6" />
-                        </svg>
-                        <span class="rounded-pill badge-danger"></span>
-                    </div>
-                    <div class="onhover-show-div message-dropdown">
-                        <h6 class="f-18 mb-0 dropdown-title">Message </h6>
-                        <ul>
-                            <li>
-                                <div class="d-flex align-items-start">
-                                    <div class="message-img bg-light-primary"><img
-                                            src="{{ asset('backend/assets/images/user/3.jpg') }}" alt="">
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h5><a href="letter-box.html">Emay Walter</a></h5>
-                                        <p>Do you want to go see movie?</p>
-                                    </div>
-                                    <div class="notification-right"><i data-feather="x"></i></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="d-flex align-items-start">
-                                    <div class="message-img bg-light-primary"><img
-                                            src="{{ asset('backend/assets/images/user/6.jpg') }}" alt="">
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h5> <a href="letter-box.html">Jason Borne</a></h5>
-                                        <p>Thank you for rating us.</p>
-                                    </div>
-                                    <div class="notification-right"><i data-feather="x"></i></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="d-flex align-items-start">
-                                    <div class="message-img bg-light-primary"><img
-                                            src="{{ asset('backend/assets/images/user/10.jpg') }}" alt="">
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h5> <a href="letter-box.html">Sarah Loren</a></h5>
-                                        <p>What`s the project report update?</p>
-                                    </div>
-                                    <div class="notification-right"><i data-feather="x"></i></div>
-                                </div>
-                            </li>
-                            <li> <a class="f-w-700" href="private-chat.html">Check all</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="cart-nav onhover-dropdown">
-                    <div class="cart-box">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                            fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                            <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                            <path d="M17 17h-11v-14h-2" />
-                            <path d="M6 5l14 1l-1 7h-13" />
-                        </svg>
-
-                    </div>
-                    <div class="cart-dropdown onhover-show-div">
-                        <h6 class="f-18 mb-0 dropdown-title">Cart</h6>
-                        <ul>
-                            <li>
-                                <div class="d-flex"><img class="img-fluid b-r-5 img-50"
-                                        src="{{ asset('backend/assets/images/ecommerce/05.jpg') }}" alt="">
-                                    <div class="flex-grow-1"> <span>Women's Track Suit</span>
-                                        <h6 class="font-primary">8 x $65.00</h6>
-                                    </div>
-                                    <div class="close-circle"><a class="bg-primary" href="#"><i
-                                                data-feather="x"></i></a></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="d-flex"><img class="img-fluid b-r-5 img-50"
-                                        src="{{ asset('backend/assets/images/ecommerce/02.jpg') }}" alt="">
-                                    <div class="flex-grow-1"><span>Men's Jacket</span>
-                                        <h6 class="font-primary">10 x $50.00</h6>
-                                    </div>
-                                    <div class="close-circle"><a class="bg-primary" href="#"><i
-                                                data-feather="x"></i></a></div>
-                                </div>
-                            </li>
-                            <li class="total">
-                                <h6 class="mb-0">Order Total :<span class="f-right">$1020.00</span></h6>
-                            </li>
-                            <li class="text-center"> <a href="cart.html">
-                                    <button class="btn btn-outline-primary" type="button">View Cart</button></a><a
-                                    class="btn btn-primary view-checkout" href="checkout.html">Checkout </a></li>
-                        </ul>
-                    </div>
-                </li>
                 <li>
                     <div class="mode">
                         <svg class="for-dark" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
@@ -316,7 +159,7 @@
 
                     </div>
                 </li>
-                <li class="language-nav">
+                {{--  <li class="language-nav">
                     <div class="translate_wrapper">
                         <div class="current_lang">
                             <div class="lang"><i class="flag-icon flag-icon-gb"></i><span
@@ -339,12 +182,12 @@
                                     class="lang-txt">لعربية <span> (ae)</span></span></div>
                         </div>
                     </div>
-                </li>
+                </li>  --}}
                 <li class="profile-nav onhover-dropdown pe-0 py-0">
                     <div class="d-flex align-items-center profile-media"><img class="b-r-25"
                             src="{{ asset('backend/assets/images/dashboard/profile.png') }}" alt="">
-                        <div class="flex-grow-1 user"><span>Helen Walter</span>
-                            <p class="mb-0 font-nunito">Admin
+                        <div class="flex-grow-1 user"><span>{{ Auth::user()->name }}</span>
+                            <p class="mb-0 font-nunito">{{ Auth::user()->role }}
                                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
                                     xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0"
                                     y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512"
@@ -361,10 +204,8 @@
                         </div>
                     </div>
                     <ul class="profile-dropdown onhover-show-div">
-                        <li><a href="user-profile.html"><i data-feather="user"></i><span>Account </span></a></li>
-                        <li><a href="letter-box.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
-                        <li><a href="task.html"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
-                        <li><a href="edit-profile.html"><i data-feather="settings"></i><span>Settings</span></a></li>
+                        <li><a href="#"><i data-feather="user"></i><span>Account </span></a></li>
+                        <li><a href="#"><i data-feather="settings"></i><span>Settings</span></a></li>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">

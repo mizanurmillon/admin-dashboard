@@ -2,47 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Zono admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
-    <meta name="keywords"
-        content="admin template, Zono admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="pixelstrap">
-    <link rel="icon" href="{{ asset('backend') }}/assets/images/favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ asset('backend') }}/assets/images/favicon.png" type="image/x-icon">
-    <title>Zono - Premium Admin Template</title>
-    <!-- Google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&amp;display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend') }}/assets/css/font-awesome.css">
-    <!-- ico-font-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend') }}/assets/css/vendors/icofont.css">
-    <!-- Themify icon-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend') }}/assets/css/vendors/themify.css">
-    <!-- Flag icon-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend') }}/assets/css/vendors/flag-icon.css">
-    <!-- Feather icon-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend') }}/assets/css/vendors/feather-icon.css">
-    <!-- Plugins css start-->
-    <!-- Plugins css Ends-->
-    <!-- Bootstrap css-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend') }}/assets/css/vendors/bootstrap.css">
-    <!-- App css-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend') }}/assets/css/style.css">
-    <link id="color" rel="stylesheet" href="{{ asset('backend') }}/assets/css/color-1.css" media="screen">
-    <!-- Responsive css-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend') }}/assets/css/responsive.css">
-    <style>
-        .login-card {
-            background-image: url("{{ asset('backend/assets/images/coming-soon-bg.jpg') }}") !important;
-        }
-    </style>
+    @include('backend.partials.style')
+    @push()
+        <style>
+            .login-card {
+                background-image: url("{{ asset('backend/assets/images/coming-soon-bg.jpg') }}") !important;
+            }
+        </style>
+    @endpush
 </head>
 
 <body>
@@ -72,13 +39,14 @@
                                 <form class="theme-form" method="POST" action="{{ route('password.store') }}">
                                     @csrf
                                     <h4>Create Your Password</h4>
-                                     <input type="hidden" name="token" value="{{ $request->route('token') }}">
-                                     
+                                    <input type="hidden" name="token" value="{{ $request->route('token') }}">
+
                                     <div class="form-group">
                                         <label class="col-form-label">Email</label>
                                         <div class="form-input position-relative">
-                                            <input class="form-control @error('email') is-invalid @enderror" type="email" name="email"
-                                                value="{{ $request->email }}" placeholder="Email" readonly>
+                                            <input class="form-control @error('email') is-invalid @enderror"
+                                                type="email" name="email" value="{{ $request->email }}"
+                                                placeholder="Email" readonly>
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -89,8 +57,8 @@
                                     <div class="form-group">
                                         <label class="col-form-label">New Password</label>
                                         <div class="form-input position-relative">
-                                            <input class="form-control @error('password') is-invalid @enderror" type="password" name="password"
-                                               placeholder="*********">
+                                            <input class="form-control @error('password') is-invalid @enderror"
+                                                type="password" name="password" placeholder="*********">
                                             <div class="show-hide"><span class="show"></span></div>
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
@@ -101,8 +69,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-form-label">Retype Password</label>
-                                        <input class="form-control @error('password_confirmation') is-invalid @enderror" type="password" name="password_confirmation"
-                                         placeholder="*********">
+                                        <input class="form-control @error('password_confirmation') is-invalid @enderror"
+                                            type="password" name="password_confirmation" placeholder="*********">
                                         @error('password_confirmation')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -122,22 +90,8 @@
             </div>
         </div>
     </div>
-    <!-- page-wrapper Ends-->
     <!-- latest jquery-->
-    <script src="{{ asset('backend') }}/assets/js/jquery.min.js"></script>
-    <!-- Bootstrap js-->
-    <script src="{{ asset('backend') }}/assets/js/bootstrap/bootstrap.bundle.min.js"></script>
-    <!-- feather icon js-->
-    <script src="{{ asset('backend') }}/assets/js/icons/feather-icon/feather.min.js"></script>
-    <script src="{{ asset('backend') }}/assets/js/icons/feather-icon/feather-icon.js"></script>
-    <!-- scrollbar js-->
-    <!-- Sidebar jquery-->
-    <script src="{{ asset('backend') }}/assets/js/config.js"></script>
-    <!-- Plugins JS start-->
-    <!-- Plugins JS Ends-->
-    <!-- Theme js-->
-    <script src="{{ asset('backend') }}/assets/js/script.js"></script>
-    <!-- Plugin used-->
+    @include('backend.partials.script')
 </body>
 
 </html>
