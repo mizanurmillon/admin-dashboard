@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Middleware\AdminMiddleware;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
+use App\Http\Middleware\AdminMiddleware;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use Illuminate\Support\Facades\Route;
 
 
 
@@ -29,5 +30,12 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
+        $exceptions->render(function (AuthenticationException $e, $request) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Unauthenticated',
+                'data' => [],
+                'code' => 401
+            ], 401);
+        });
     })->create();
