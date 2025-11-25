@@ -77,7 +77,7 @@
                                 <path d="M12 8v4" />
                                 <path d="M12 16h.01" />
                             </svg>
-                            <span>Project </span></a>
+                            <span>Settings </span></a>
                         <ul class="sidebar-submenu">
                             <li><a href="projects.html">Project List</a></li>
                             <li><a href="projectcreate.html">Create new</a></li>
