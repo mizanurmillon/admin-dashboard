@@ -11,7 +11,7 @@ Route::controller(RegisterController::class)->prefix('users')->group(function ()
     Route::post('/register', 'Register');
 
     // Resend OTP
-    Route::post('/otp-resend', 'resendOtp');
+    Route::post('/resend-otp', 'resendOtp');
 
     // Verify OTP
     Route::post('/verify-otp', 'verifyOtp');

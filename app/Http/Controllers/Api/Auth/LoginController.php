@@ -97,7 +97,7 @@ class LoginController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return $this->error($validator->errors(), "Validation Error", 422);
+            return $this->error($validator->errors(), $validator->errors()->first(), 422);
         }
 
         try {
@@ -119,7 +119,7 @@ class LoginController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return $this->error($validator->errors(), "Validation Error", 422);
+            return $this->error($validator->errors(), $validator->errors()->first(), 422);
         }
 
         try {
@@ -143,7 +143,7 @@ class LoginController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return $this->error($validator->errors(), "Validation Error", 422);
+            return $this->error($validator->errors(), $validator->errors()->first(), 422);
         }
 
         try {
@@ -188,15 +188,15 @@ class LoginController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return $this->error($validator->errors(), "Validation Error", 422);
+            return $this->error($validator->errors(), $validator->errors()->first(), 422);
         }
 
         try {
             // Retrieve the user by email
             $user = User::where('email', $request->input('email'))->first();
 
-            if (!$user->password_reset_token || $user->password_reset_token !== $request->input('key')) {
-                return $this->error([], 'Invalid or expired token', 400);
+            if (!$user->password_reset_token) {
+                return $this->error([], 'Password reset token not found', 400);
             }
 
             $user->password = Hash::make($request->input('password'));
@@ -208,8 +208,5 @@ class LoginController extends Controller
             return $this->error([], $e->getMessage(), 500);
         }
     }
-
-
-
 
 }
