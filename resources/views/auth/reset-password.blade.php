@@ -29,9 +29,9 @@
                     <div class="login-card login-dark">
                         <div>
                             <div><a class="logo" href="index.html"><img class="img-fluid for-light"
-                                        src="{{ asset('backend/assets/images/logo/logo.png') }}" alt="looginpage"><img
+                                        src="{{ asset($systemSetting->logo ?? 'backend/assets/images/logo/logo.png') }}" alt="looginpage"><img
                                         class="img-fluid for-dark"
-                                        src="{{ asset('backend/assets/images/logo/logo.png') }}" alt="looginpage"></a>
+                                        src="{{ asset($systemSetting->logo_dark ?? 'backend/assets/images/logo/logo_dark.png') }}" alt="looginpage"></a>
                             </div>
                             <div class="login-main">
                                 <form class="theme-form" method="POST" action="{{ route('password.store') }}">

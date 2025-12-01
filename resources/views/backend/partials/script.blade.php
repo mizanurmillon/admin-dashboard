@@ -40,6 +40,7 @@
  <!-- Plugins JS Ends-->
  <!-- Theme js-->
  <script src="{{ asset('backend/assets/js/toastr.min.js') }}"></script>
+ <script src="{{ asset('backend/assets/js/dropify.min.js') }}"></script>
  <script src="{{ asset('backend/assets/js/script.js') }}"></script>
  {{--  <script src="{{ asset('backend/assets/js/theme-customizer/customizer.js') }}"></script>  --}}
  <!-- Plugin used-->
@@ -132,5 +133,13 @@
      });
  </script>
  {{-- toastr end --}}
+
+{{-- dropify start --}}
+<script>
+    $(document).ready(function() {
+        $('.dropify').dropify();
+    });
+</script>
+{{-- dropify end --}}
 
  @stack('script')

@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Web\Backend\Settings\ProfileSettingController;
+use App\Http\Controllers\Web\Backend\Settings\SystemSettingController;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -14,4 +16,10 @@ Route::controller(ProfileSettingController::class)->group(function () {
     //! Route for ProfileController
     Route::get('/profile', 'showProfile')->name('profile.setting');
     Route::post('/update-profile', 'UpdateProfile')->name('update.profile');
+});
+
+//! Route for SystemSettingController
+Route::controller(SystemSettingController::class)->group(function () {
+    Route::get('/system-setting', 'index')->name('system.index');
+    Route::post('/system-setting', 'update')->name('system.update');
 });

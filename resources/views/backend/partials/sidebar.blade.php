@@ -1,8 +1,8 @@
 <div class="sidebar-wrapper" data-layout="stroke-svg">
     <div>
         <div class="logo-wrapper"><a href="{{ route('admin.dashboard') }}"> <img class="img-fluid for-light"
-                    src="{{ asset('backend/assets/images/logo/logo.png') }}" alt=""><img class="img-fluid for-dark"
-                    src="{{ asset('backend/assets/images/logo/logo_dark.png') }}" alt=""></a>
+                    src="{{ asset($systemSetting->logo ?? 'backend/assets/images/logo/logo.png') }}" alt=""><img class="img-fluid for-dark"
+                    src="{{ asset($systemSetting->logo_dark ?? 'backend/assets/images/logo/logo_dark.png') }}" alt=""></a>
             <div class="toggle-sidebar">
                 <svg class="sidebar-toggle">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -17,13 +17,13 @@
             </div>
         </div>
         <div class="logo-icon-wrapper"><a href="{{ route('admin.dashboard') }}"><img class="img-fluid"
-                    src="{{ asset('backend/assets/images/logo/logo-icon.png') }}" alt=""></a></div>
+                    src="{{ asset($systemSetting->favicon ?? 'backend/assets/images/logo/logo-icon.png') }}" alt=""></a></div>
         <nav class="sidebar-main">
             <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
             <div id="sidebar-menu">
                 <ul class="sidebar-links" id="simple-bar">
                     <li class="back-btn"><a href="{{ route('admin.dashboard') }}"><img class="img-fluid"
-                                src="{{ asset('backend/assets/images/logo/logo-icon.png') }}" alt=""></a>
+                                src="{{ asset($systemSetting->favicon ?? 'backend/assets/images/logo/logo-icon.png') }}" alt=""></a>
                         <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2"
                                 aria-hidden="true"></i></div>
                     </li>
@@ -63,7 +63,7 @@
                             <span>Settings </span></a>
                         <ul class="sidebar-submenu">
                             <li><a href="/admin/profile">Profile Settings</a></li>
-                            <li><a href="#">System Settings</a></li>
+                            <li><a href="/admin/system-setting">System Settings</a></li>
                             <li><a href="#">Dynamic Pages</a></li>
                             <li><a href="#">Mail Settings</a></li>
                             <li><a href="#">Social Settings</a></li>

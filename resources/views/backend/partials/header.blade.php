@@ -2,8 +2,8 @@
     <div class="header-wrapper row m-0">
         <div class="header-logo-wrapper col-auto p-0">
             <div class="logo-wrapper"><a href="{{ route('admin.dashboard') }}"> <img class="img-fluid for-light"
-                        src="{{ asset('backend/assets/images/logo/logo-icon.png') }}" alt=""><img
-                        class="img-fluid for-dark" src="{{ asset('backend/assets/images/logo/logo_dark.png') }}"
+                        src="{{ asset($systemSetting->logo ?? 'backend/assets/images/logo/logo-icon.png') }}" alt=""><img
+                        class="img-fluid for-dark" src="{{ asset($systemSetting->logo_dark ?? 'backend/assets/images/logo/logo_dark.png') }}"
                         alt=""></a></div>
             <div class="toggle-sidebar">
 
@@ -205,7 +205,7 @@
                     </div>
                     <ul class="profile-dropdown onhover-show-div">
                         <li><a href="{{ route('profile.setting') }}"><i data-feather="user"></i><span>Account </span></a></li>
-                        <li><a href="#"><i data-feather="settings"></i><span>Settings</span></a></li>
+                        <li><a href="{{ route('system.index') }}"><i data-feather="settings"></i><span>Settings</span></a></li>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" style="background:none; border:none; padding:0; cursor:pointer;">
