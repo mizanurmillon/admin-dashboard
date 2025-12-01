@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Storage;
  * @param  string  $directory
  * @return string
  */
-function uploadImage($file, $folder) {
+function uploadImage($file, $folder)
+{
     if (!$file->isValid()) {
         return null;
     }
@@ -33,7 +34,8 @@ function uploadImage($file, $folder) {
  *
  * @return string
  */
-function storeFile($file, $folder) {
+function storeFile($file, $folder)
+{
     if (!$file->isValid()) {
         return null;
     }
@@ -132,4 +134,23 @@ function generateUniqueSKU($table, $column, $length = 10)
     } while ($exists);
 
     return $randomString;
+}
+
+if (! function_exists('flashMessage')) {
+    /**
+     * Flash a notification message
+     *
+     * @param string $message
+     * @param string $type ('success', 'error', 'info', 'warning')
+     * @param int $timeout (milliseconds)
+     * @param string $position ('top-right', 'top-left', etc.)
+     */
+    function flashMessage($message, $type = 'success', $timeout = 3000, $position = 'top-right')
+    {
+        flash()
+            ->use('theme.google')
+            ->option('position', $position)
+            ->option('timeout', $timeout)
+            ->$type($message);
+    }
 }

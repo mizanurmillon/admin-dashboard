@@ -1,5 +1,15 @@
 @extends('backend.app')
-@section('title', 'Dashboard')
+@section('title', 'Edit Profile')
+@push('style')
+    <style>
+        .show-hide {
+            position: absolute;
+            right: 20px;
+            top: 19px;
+            transform: translateY(-50%);
+        }
+    </style>
+@endpush
 @section('page-content')
 
     <div class="container-fluid">
@@ -43,52 +53,64 @@
                                         class="fe fe-x"></i></a></div>
                         </div>
                         <div class="card-body">
-                            <form>
-                                <div class="row mb-2">
-                                    <div class="profile-title">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <!-- Profile Image -->
-                                            <div class="position-relative">
-                                                <img class="img-70 rounded-circle" alt=""
-                                                    src="{{ asset($userDetails->avatar ?? 'backend/assets/images/user/7.jpg') }}">
+                            <div class="row mb-2">
+                                <div class="profile-title">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <!-- Profile Image -->
+                                        <div class="position-relative">
+                                            <img class="rounded-circle profile-picture" alt=""
+                                                src="{{ asset($userDetails->avatar ?? 'backend/assets/images/user/7.jpg') }}"
+                                                style="width: 70px; height: 70px; object-fit: cover;">
 
-                                                <!-- Upload Button Icon on Image -->
-                                                <div class="position-absolute bottom-0 end-0">
-                                                    <input type="file" name="profile_picture" id="profile_picture_input"
-                                                        hidden>
-                                                    <label for="profile_picture_input"
-                                                        class="bg-light rounded-circle shadow-sm"
-                                                        style="cursor: pointer;  width: 23px; display: flex; height: 23px; justify-content: center; align-items: center;">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="18"
-                                                            height="18" viewBox="0 0 24 24" fill="none"
-                                                            stroke="#000000" stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                            class="icon icon-tabler icons-tabler-outline icon-tabler-cloud-up">
-                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                            <path
-                                                                d="M12 18.004h-5.343c-2.572 -.004 -4.657 -2.011 -4.657 -4.487c0 -2.475 2.085 -4.482 4.657 -4.482c.393 -1.762 1.794 -3.2 3.675 -3.773c1.88 -.572 3.956 -.193 5.444 1c1.488 1.19 2.162 3.007 1.77 4.769h.99c1.38 0 2.57 .811 3.128 1.986" />
-                                                            <path d="M19 22v-6" />
-                                                            <path d="M22 19l-3 -3l-3 3" />
-                                                        </svg>
-                                                    </label>
-                                                </div>
+                                            <!-- Upload Button Icon on Image -->
+                                            <div class="position-absolute bottom-0 end-0">
+                                                <input type="file" name="profile_picture" id="profile_picture_input"
+                                                    hidden>
+                                                <label for="profile_picture_input" class="bg-light rounded-circle shadow-sm"
+                                                    style="cursor: pointer;  width: 23px; display: flex; height: 23px; justify-content: center; align-items: center;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                        viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="icon icon-tabler icons-tabler-outline icon-tabler-cloud-up">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <path
+                                                            d="M12 18.004h-5.343c-2.572 -.004 -4.657 -2.011 -4.657 -4.487c0 -2.475 2.085 -4.482 4.657 -4.482c.393 -1.762 1.794 -3.2 3.675 -3.773c1.88 -.572 3.956 -.193 5.444 1c1.488 1.19 2.162 3.007 1.77 4.769h.99c1.38 0 2.57 .811 3.128 1.986" />
+                                                        <path d="M19 22v-6" />
+                                                        <path d="M22 19l-3 -3l-3 3" />
+                                                    </svg>
+                                                </label>
                                             </div>
+                                        </div>
 
-                                            <!-- User Details -->
-                                            <div class="flex-grow-1">
-                                                <h3 class="mb-1 f-w-600">{{ $userDetails->name }}</h3>
-                                                <p class="mb-0 text-muted">{{ $userDetails->role }}</p>
-                                            </div>
+                                        <!-- User Details -->
+                                        <div class="flex-grow-1">
+                                            <h3 class="mb-1 f-w-600">{{ $userDetails->name }}</h3>
+                                            <p class="mb-0 text-muted">{{ $userDetails->role }}</p>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <form method="POST" action="{{ route('update.profile') }}">
+                                @csrf
                                 <div class="mb-3">
                                     <label class="form-label">Name</label>
-                                    <input class="form-control" type="text" value="{{ $userDetails->name }}">
+                                    <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" placeholder="Enter your name"
+                                        value="{{ $userDetails->name }}">
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Email-Address</label>
-                                    <input class="form-control" placeholder="Email" value="{{ $userDetails->email }}">
+                                    <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Enter your Email"
+                                        value="{{ $userDetails->email }}">
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="form-footer">
                                     <button class="btn btn-primary btn-block">Save</button>
@@ -98,7 +120,8 @@
                     </div>
                 </div>
                 <div class="col-xl-8">
-                    <form class="card">
+                    <form class="card" method="POST" action="{{ route('update.password') }}">
+                        @csrf
                         <div class="card-header pb-0">
                             <h4 class="card-title mb-0">Update Password</h4>
                             <div class="card-options"><a class="card-options-collapse" href="#"
@@ -111,25 +134,55 @@
                                 <div class="col-md-12">
                                     <div class="mb-3">
                                         <label class="form-label">Current Password</label>
-                                        <input class="form-control" type="password" placeholder="Current Password">
+                                        <div class="form-input position-relative">
+                                            <input class="form-control @error('password') is-invalid @enderror"
+                                                type="password" placeholder="Enter your current password"
+                                                name="password">
+                                            @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                            <div class="show-hide"><span class="show"> </span></div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="mb-3">
                                         <label class="form-label">New Password</label>
-                                        <input class="form-control" type="password" placeholder="New Password">
+                                        <div class="form-input position-relative">
+                                            <input class="form-control @error('new_password') is-invalid @enderror"
+                                                type="password" placeholder="Enter your new password"
+                                                name="new_password">
+                                            @error('new_password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                            {{--  <div class="show-hide"><span class="show"> </span></div>  --}}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="mb-3">
                                         <label class="form-label">Confirm Password</label>
-                                        <input class="form-control" type="password" placeholder="Confirm Password">
+                                        <div class="form-input position-relative">
+                                            <input class="form-control @error('new_password_confirmation') is-invalid @enderror"
+                                                type="password" placeholder="Enter your confirm password"
+                                                name="new_password_confirmation">
+                                            @error('new_password_confirmation')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                            {{--  <div class="show-hide hide-show"><span class="show"> </span></div>  --}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer text-end">
-                            <button class="btn btn-primary" type="submit">Update Profile</button>
+                            <button class="btn btn-primary" type="submit">Update Password</button>
                         </div>
                     </form>
                 </div>
@@ -142,8 +195,15 @@
     <script>
         $(document).ready(function() {
             $('#profile_picture_input').change(function() {
+
+                const file = $(this)[0].files[0];
+                if (!file) {
+                    toastr.error('Please select an image first.');
+                    return;
+                }
+
                 const formData = new FormData();
-                formData.append('profile_picture', $(this)[0].files[0]);
+                formData.append('profile_picture', file);
                 formData.append('_token', '{{ csrf_token() }}');
 
                 $.ajax({
@@ -154,14 +214,18 @@
                     contentType: false,
                     success: function(data) {
                         if (data.success) {
-                            $('#profile-picture').attr('src', data.image_url);
+                            // Prevent image caching
+                            let newImageUrl = data.image_url + '?v=' + new Date().getTime();
+                            $('.profile-picture').attr('src', newImageUrl);
+
                             toastr.success('Profile picture updated successfully.');
                         } else {
                             toastr.error(data.message);
                         }
                     },
-                    error: function() {
-                        toastr.error(data.message);
+                    error: function(xhr) {
+                        toastr.error('Something went wrong!');
+                        console.log(xhr.responseText);
                     }
                 });
             });

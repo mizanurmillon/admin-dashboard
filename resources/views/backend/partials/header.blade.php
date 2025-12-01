@@ -184,8 +184,8 @@
                     </div>
                 </li>  --}}
                 <li class="profile-nav onhover-dropdown pe-0 py-0">
-                    <div class="d-flex align-items-center profile-media"><img class="b-r-25"
-                            src="{{ asset('backend/assets/images/dashboard/profile.png') }}" alt="">
+                    <div class="d-flex align-items-center profile-media"><img class="b-r-25 img-50 img-fluid profile-picture"
+                            src="{{ asset(auth()->user()->avatar ?? 'backend/assets/images/dashboard/profile.png') }}" alt="">
                         <div class="flex-grow-1 user"><span>{{ Auth::user()->name }}</span>
                             <p class="mb-0 font-nunito">{{ Auth::user()->role }}
                                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -204,7 +204,7 @@
                         </div>
                     </div>
                     <ul class="profile-dropdown onhover-show-div">
-                        <li><a href="#"><i data-feather="user"></i><span>Account </span></a></li>
+                        <li><a href="{{ route('profile.setting') }}"><i data-feather="user"></i><span>Account </span></a></li>
                         <li><a href="#"><i data-feather="settings"></i><span>Settings</span></a></li>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

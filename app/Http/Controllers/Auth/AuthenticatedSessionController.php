@@ -28,13 +28,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        flash()
-            ->use('theme.google')
-            ->option('position', 'bottom-right')
-            ->option('timeout', 3000)
-            ->option('direction', 'top')
-            ->success('Welcome back! You have been logged in.');
-
+        flashMessage('You have been logged in successfully.', 'success');
         return redirect()->intended(route('admin.dashboard', absolute: false));
     }
 
@@ -49,12 +43,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        flash()
-            ->use('theme.google')
-            ->option('position', 'bottom-right')
-            ->option('timeout', 3000)
-            ->option('direction', 'top')
-            ->success('You have been logged out successfully.');
+        flashMessage('You have been logged out successfully.', 'success');
 
         return redirect('/');
     }

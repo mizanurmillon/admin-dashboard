@@ -37,9 +37,9 @@
                     <div class="card-body premium-card">
                         <div class="row premium-courses-card">
                             <div class="col-md-5 premium-course">
-                                <h1 class="f-w-700">Get Thousands Premium Courses.</h1><span
+                                <h1 class="f-w-700">Welcome to admin dashboard mr, {{ auth()->user()->name }}.</h1><span
                                     class="f-light f-w-400 f-14">Upgrade to watch, play, learn, make and discover.
-                                </span><a class="btn btn-square btn-primary f-w-700" href="pricing.html">Go Premium</a>
+                                </span><a class="btn btn-square btn-primary f-w-700" href="{{ route('profile.setting') }}">Go Profile</a>
                             </div>
                             <div class="col-md-7 premium-course-img">
                                 <div class="premium-message"><img class="img-fluid"
