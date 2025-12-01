@@ -3,13 +3,11 @@
 
 <head>
     @include('backend.partials.style')
-    @push()
-        <style>
-            .login-card {
-                background-image: url("{{ asset('backend/assets/images/coming-soon-bg.jpg') }}") !important;
-            }
-        </style>
-    @endpush
+   <style>
+        .login-card{
+            background-image: url("{{ asset('backend/assets/images/coming-soon-bg.jpg') }}") !important;
+        }
+    </style>
 </head>
 
 <body>
