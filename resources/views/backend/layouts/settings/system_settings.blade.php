@@ -1,7 +1,6 @@
 @extends('backend.app')
 @section('title', 'System Settings')
 @push('style')
-    
 @endpush
 @section('page-content')
     <div class="container-fluid">
@@ -51,7 +50,8 @@
                                 <div class="row">
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">System Name</label>
-                                        <input class="form-control @error('system_name') is-invalid @enderror" type="text" name="system_name" placeholder="Enter your system name"
+                                        <input class="form-control @error('system_name') is-invalid @enderror"
+                                            type="text" name="system_name" placeholder="Enter your system name"
                                             value="{{ old('system_name', $setting->system_name ?? '') }}">
                                         @error('system_name')
                                             <span class="invalid-feedback" role="alert">
@@ -61,7 +61,8 @@
                                     </div>
                                     <div class="mb-3 col-md-6">
                                         <label class="form-label">Support Email</label>
-                                        <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Enter your support email"
+                                        <input class="form-control @error('email') is-invalid @enderror" type="email"
+                                            name="email" placeholder="Enter your support email"
                                             value="{{ old('email', $setting->email ?? '') }}">
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -73,7 +74,8 @@
                                 <div class="row">
                                     <div class="mb-3 col-md-12">
                                         <label class="form-label">Copyright Text</label>
-                                        <input class="form-control @error('copyright_text') is-invalid @enderror" type="text" name="copyright_text" placeholder="Enter your copyright text"
+                                        <input class="form-control @error('copyright_text') is-invalid @enderror"
+                                            type="text" name="copyright_text" placeholder="Enter your copyright text"
                                             value="{{ old('copyright_text', $setting->copyright_text ?? '') }}">
                                         @error('copyright_text')
                                             <span class="invalid-feedback" role="alert">
@@ -85,28 +87,33 @@
                                 <div class="row">
                                     <div class="mb-3 col-md-4">
                                         <label class="form-label">Logo</label>
-                                        <input class="dropify form-control @error('logo') is-invalid @enderror" type="file" name="logo" placeholder="Enter your logo" data-default-file="{{ asset($setting->logo ?? 'backend/assets/images/image_placeholder.png') }}">
+                                        <input class="dropify form-control @error('logo') is-invalid @enderror"
+                                            type="file" name="logo" placeholder="Enter your logo"
+                                            data-default-file="{{ asset($setting->logo ?? 'backend/assets/images/image_placeholder.png') }}">
                                         @error('logo')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="text-danger" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
                                     <div class="mb-3 col-md-4">
                                         <label class="form-label">Logo Dark</label>
-                                        <input class="dropify form-control @error('logo_dark') is-invalid @enderror" type="file" name="logo_dark" placeholder="Enter your dark logo" data-default-file="{{ asset( $setting->logo_dark ?? 'backend/assets/images/image_placeholder.png') }}">
+                                        <input class="dropify form-control @error('logo_dark') is-invalid @enderror"
+                                            type="file" name="logo_dark" placeholder="Enter your dark logo"
+                                            data-default-file="{{ asset($setting->logo_dark ?? 'backend/assets/images/image_placeholder.png') }}">
                                         @error('logo_dark')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="text-danger" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
                                     <div class="mb-3 col-md-4">
                                         <label class="form-label">Favicon</label>
-                                        <input class="dropify form-control @error('favicon') is-invalid @enderror" type="file" name="favicon" placeholder="Enter your favicon"
-                                           data-default-file="{{ asset($setting->favicon ?? 'backend/assets/images/image_placeholder.png') }}">
+                                        <input class="dropify form-control @error('favicon') is-invalid @enderror"
+                                            type="file" name="favicon" placeholder="Enter your favicon"
+                                            data-default-file="{{ asset($setting->favicon ?? 'backend/assets/images/image_placeholder.png') }}">
                                         @error('favicon')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="text-danger" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror

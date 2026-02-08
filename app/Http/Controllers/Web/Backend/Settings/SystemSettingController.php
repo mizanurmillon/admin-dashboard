@@ -33,9 +33,9 @@ class SystemSettingController extends Controller
             'system_name'    => 'nullable|string',
             'email'          => 'required|email',
             'copyright_text' => 'nullable|string',
-            'logo'           => 'nullable|image|mimes:png,jpg,jpeg,svg|max:5120',
-            'logo_dark'=> 'nullable|image|mimes:png,jpg,jpeg,svg|max:5120',
-            'favicon'        => 'nullable|image|mimes:png,jpg,jpeg,svg|max:2048',
+            'logo'           => 'nullable|file|mimes:png,jpg,jpeg,svg|max:5120',
+            'logo_dark'=> 'nullable|file|mimes:png,jpg,jpeg,svg|max:5120',
+            'favicon'        => 'nullable|file|mimes:png,jpg,jpeg,svg|max:2048',
         ]);
 
         if ($validator->fails()) {
