@@ -1,4 +1,6 @@
  <!-- latest jquery-->
+ {{--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  --}}
+
  <script src="{{ asset('backend/assets/js/jquery.min.js') }}"></script>
  <!-- Bootstrap js-->
  <script src="{{ asset('backend/assets/js/bootstrap/bootstrap.bundle.min.js') }}"></script>
@@ -30,20 +32,23 @@
  <script src="{{ asset('backend/assets/js/datatable/datatables/datatable.custom1.js') }}"></script>
  <script src="{{ asset('backend/assets/js/owlcarousel/owl.carousel.js') }}"></script>
  <script src="{{ asset('backend/assets/js/owlcarousel/owl-custom.js') }}"></script>
- <script src="{{ asset('backend/assets/js/typeahead/handlebars.js') }}"></script>
+ {{-- <script src="{{ asset('backend/assets/js/typeahead/handlebars.js') }}"></script>
  <script src="{{ asset('backend/assets/js/typeahead/typeahead.bundle.js') }}"></script>
  <script src="{{ asset('backend/assets/js/typeahead/typeahead.custom.js') }}"></script>
  <script src="{{ asset('backend/assets/js/typeahead-search/handlebars.js') }}"></script>
- <script src="{{ asset('backend/assets/js/typeahead-search/typeahead-custom.js') }}"></script>
+ <script src="{{ asset('backend/assets/js/typeahead-search/typeahead-custom.js') }}"></script> --}}
  <script src="{{ asset('backend/assets/js/height-equal.js') }}"></script>
 
- <!-- Plugins JS Ends-->
  <!-- Theme js-->
  <script src="{{ asset('backend/assets/js/toastr.min.js') }}"></script>
  <script src="{{ asset('backend/assets/js/dropify.min.js') }}"></script>
  <script src="{{ asset('backend/assets/js/script.js') }}"></script>
- {{--  <script src="{{ asset('backend/assets/js/theme-customizer/customizer.js') }}"></script>  --}}
+ {{-- <script src="{{ asset('backend/assets/js/theme-customizer/customizer.js') }}"></script> --}}
  <!-- Plugin used-->
+
+ {{-- For ajax --}}
+ @include('backend.ajax.masterAjax')
+
 
  {{-- toastr start --}}
  <script>
@@ -51,95 +56,97 @@
          toastr.options.timeOut = 10000;
          toastr.options.positionClass = 'toast-top-right';
 
-         @if (Session::has('t-success'))
-             toastr.options = {
-                 'closeButton': true,
-                 'debug': false,
-                 'newestOnTop': true,
-                 'progressBar': true,
-                 'positionClass': 'toast-top-right',
-                 'preventDuplicates': false,
-                 'showDuration': '1000',
-                 'hideDuration': '1000',
-                 'timeOut': '5000',
-                 'extendedTimeOut': '1000',
-                 'showEasing': 'swing',
-                 'hideEasing': 'linear',
-                 'showMethod': 'fadeIn',
-                 'hideMethod': 'fadeOut',
-             };
-             toastr.success("{{ session('t-success') }}");
+         @if(Session::has('t-success'))
+         toastr.options = {
+             'closeButton': true
+             , 'debug': false
+             , 'newestOnTop': true
+             , 'progressBar': true
+             , 'positionClass': 'toast-top-right'
+             , 'preventDuplicates': false
+             , 'showDuration': '1000'
+             , 'hideDuration': '1000'
+             , 'timeOut': '5000'
+             , 'extendedTimeOut': '1000'
+             , 'showEasing': 'swing'
+             , 'hideEasing': 'linear'
+             , 'showMethod': 'fadeIn'
+             , 'hideMethod': 'fadeOut'
+         , };
+         toastr.success("{{ session('t-success') }}");
          @endif
 
-         @if (Session::has('t-error'))
-             toastr.options = {
-                 'closeButton': true,
-                 'debug': false,
-                 'newestOnTop': true,
-                 'progressBar': true,
-                 'positionClass': 'toast-top-right',
-                 'preventDuplicates': false,
-                 'showDuration': '1000',
-                 'hideDuration': '1000',
-                 'timeOut': '5000',
-                 'extendedTimeOut': '1000',
-                 'showEasing': 'swing',
-                 'hideEasing': 'linear',
-                 'showMethod': 'fadeIn',
-                 'hideMethod': 'fadeOut',
-             };
-             toastr.error("{{ session('t-error') }}");
+         @if(Session::has('t-error'))
+         toastr.options = {
+             'closeButton': true
+             , 'debug': false
+             , 'newestOnTop': true
+             , 'progressBar': true
+             , 'positionClass': 'toast-top-right'
+             , 'preventDuplicates': false
+             , 'showDuration': '1000'
+             , 'hideDuration': '1000'
+             , 'timeOut': '5000'
+             , 'extendedTimeOut': '1000'
+             , 'showEasing': 'swing'
+             , 'hideEasing': 'linear'
+             , 'showMethod': 'fadeIn'
+             , 'hideMethod': 'fadeOut'
+         , };
+         toastr.error("{{ session('t-error') }}");
          @endif
 
-         @if (Session::has('t-info'))
-             toastr.options = {
-                 'closeButton': true,
-                 'debug': false,
-                 'newestOnTop': true,
-                 'progressBar': true,
-                 'positionClass': 'toast-top-right',
-                 'preventDuplicates': false,
-                 'showDuration': '1000',
-                 'hideDuration': '1000',
-                 'timeOut': '5000',
-                 'extendedTimeOut': '1000',
-                 'showEasing': 'swing',
-                 'hideEasing': 'linear',
-                 'showMethod': 'fadeIn',
-                 'hideMethod': 'fadeOut',
-             };
-             toastr.info("{{ session('t-info') }}");
+         @if(Session::has('t-info'))
+         toastr.options = {
+             'closeButton': true
+             , 'debug': false
+             , 'newestOnTop': true
+             , 'progressBar': true
+             , 'positionClass': 'toast-top-right'
+             , 'preventDuplicates': false
+             , 'showDuration': '1000'
+             , 'hideDuration': '1000'
+             , 'timeOut': '5000'
+             , 'extendedTimeOut': '1000'
+             , 'showEasing': 'swing'
+             , 'hideEasing': 'linear'
+             , 'showMethod': 'fadeIn'
+             , 'hideMethod': 'fadeOut'
+         , };
+         toastr.info("{{ session('t-info') }}");
          @endif
 
-         @if (Session::has('t-warning'))
-             toastr.options = {
-                 'closeButton': true,
-                 'debug': false,
-                 'newestOnTop': true,
-                 'progressBar': true,
-                 'positionClass': 'toast-top-right',
-                 'preventDuplicates': false,
-                 'showDuration': '1000',
-                 'hideDuration': '1000',
-                 'timeOut': '5000',
-                 'extendedTimeOut': '1000',
-                 'showEasing': 'swing',
-                 'hideEasing': 'linear',
-                 'showMethod': 'fadeIn',
-                 'hideMethod': 'fadeOut',
-             };
-             toastr.warning("{{ session('t-warning') }}");
+         @if(Session::has('t-warning'))
+         toastr.options = {
+             'closeButton': true
+             , 'debug': false
+             , 'newestOnTop': true
+             , 'progressBar': true
+             , 'positionClass': 'toast-top-right'
+             , 'preventDuplicates': false
+             , 'showDuration': '1000'
+             , 'hideDuration': '1000'
+             , 'timeOut': '5000'
+             , 'extendedTimeOut': '1000'
+             , 'showEasing': 'swing'
+             , 'hideEasing': 'linear'
+             , 'showMethod': 'fadeIn'
+             , 'hideMethod': 'fadeOut'
+         , };
+         toastr.warning("{{ session('t-warning') }}");
          @endif
      });
+
  </script>
  {{-- toastr end --}}
 
-{{-- dropify start --}}
-<script>
-    $(document).ready(function() {
-        $('.dropify').dropify();
-    });
-</script>
-{{-- dropify end --}}
+ {{-- dropify start --}}
+ <script>
+     $(document).ready(function() {
+         $('.dropify').dropify();
+     });
 
- @stack('script')
+ </script>
+ {{-- dropify end --}}
+
+{{-- stack('script') removed from here as it is handled by the main app layout. --}}

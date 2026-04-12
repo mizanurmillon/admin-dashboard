@@ -1,11 +1,9 @@
 <?php
 
+use App\Http\Controllers\Web\Backend\Settings\DynamicPageController;
 use App\Http\Controllers\Web\Backend\Settings\ProfileSettingController;
 use App\Http\Controllers\Web\Backend\Settings\SystemSettingController;
 use Illuminate\Support\Facades\Route;
-
-
-
 
 
 //! This route is for updating the user's profile
@@ -22,4 +20,16 @@ Route::controller(ProfileSettingController::class)->group(function () {
 Route::controller(SystemSettingController::class)->group(function () {
     Route::get('/system-setting', 'index')->name('system.index');
     Route::post('/system-setting', 'update')->name('system.update');
+});
+
+//! DynamicPageController_______________________________________________________
+Route::controller(DynamicPageController::class)->group(function () {
+    Route::get('/dynamic-page', 'index')->name('dynamic_page.index');
+    Route::get('/dynamic-page/create', 'create')->name('dynamic_page.create');
+    Route::post('/dynamic-page', 'store')->name('dynamic_page.store');
+    Route::get('/dynamic-page/{id}/edit', 'edit')->name('dynamic_page.edit');
+    Route::patch('/dynamic-page/{id}', 'update')->name('dynamic_page.update');
+    Route::patch('/dynamic-page/{id}/status', 'status')->name('dynamic_page.status');
+    Route::get('/dynamic-page/{id}', 'show')->name('dynamic_page.show');
+    Route::delete('/dynamic-page/{id}', 'destroy')->name('dynamic_page.destroy');
 });
