@@ -10,14 +10,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\View;
 
 class ProfileSettingController extends Controller
 {
     /**
      * Display the profile settings page.
      *
-     * @return View
+     * 
      */
     public function showProfile()
     {
