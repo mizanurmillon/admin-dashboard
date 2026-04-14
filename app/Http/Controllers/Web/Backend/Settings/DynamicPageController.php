@@ -29,7 +29,7 @@ class DynamicPageController extends Controller
     {
         if ($request->ajax()) {
             try {
-                $data = DynamicPage::latest()->get();
+                $data = DynamicPage::latest();
                     return DataTables::of($data)
                         ->addIndexColumn()
                         ->editColumn('page_content', function (DynamicPage $page) {
@@ -111,7 +111,7 @@ class DynamicPageController extends Controller
             if (User::find(auth()->user()->id)) {
                 $validator = Validator::make($request->all(), [
                     'page_title'   => 'required|string',
-                    'banner'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:20480',
+                    'banner'       => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:20480',
                     'page_content' => 'required|string',
                 ]);
 
@@ -119,15 +119,23 @@ class DynamicPageController extends Controller
                     return redirect()->back()->withErrors($validator)->withInput();
                 }
 
+                $banner = null;
+                if($request->hasFile('banner')) {
+                    $banner = uploadFile($request->file('banner'), 'uploads/dynamic_page');
+                }
+
                 $data               = new DynamicPage();
                 $data->page_title   = $request->page_title;
                 $data->page_slug    = Str::slug($request->page_title);
                 $data->page_content = $request->page_content;
+                $data->banner       = $banner;
                 $data->save();
             }
-            return redirect()->route('dynamic_page.index')->with('success', 'Dynamic Page created successfully.');
-        } catch (Exception) {
-            return redirect()->route('dynamic_page.index')->with('error', 'Dynamic Page failed created.');
+            flashMessage('Dynamic Page created successfully.', 'success');
+            return redirect()->route('dynamic_page.index');
+        } catch (Exception $e) {
+            flashMessage($e->getMessage(), 'error');
+            return redirect()->route('dynamic_page.index');
         }
     }
 
@@ -140,8 +148,8 @@ class DynamicPageController extends Controller
     public function edit(int $id): View | RedirectResponse
     {
         if (User::find(auth()->user()->id)) {
-            $data = DynamicPage::find($id);
-            return view('backend.layouts.settings.dynamic-pages.edit', compact('data'));
+            $page = DynamicPage::find($id);
+            return view('backend.layouts.settings.dynamic-pages.create', compact('page'));
         }
         return redirect()->route('dynamic_page.index');
     }
@@ -181,11 +189,13 @@ class DynamicPageController extends Controller
                     'banner'       => $banner,
                     'page_content' => $request->page_content,
                 ]);
-
-                return redirect()->route('dynamic_page.index')->with('success', 'Successfully updated!');
+                
+                flashMessage('Dynamic Page updated successfully.', 'success');
+                return redirect()->route('dynamic_page.index');
             }
         } catch (Exception $e) {
-            return redirect()->route('dynamic_page.index')->with('error', 'Unsuccessful!');
+            flashMessage('Dynamic Page failed updated.', 'error');
+            return redirect()->route('dynamic_page.index');
         }
 
         return redirect()->route('dynamic_page.index');

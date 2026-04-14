@@ -1,5 +1,5 @@
  <!-- latest jquery-->
- {{--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  --}}
+ {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  --}}
 
  <script src="{{ asset('backend/assets/js/jquery.min.js') }}"></script>
  <!-- Bootstrap js-->
@@ -43,6 +43,7 @@
  <script src="{{ asset('backend/assets/js/toastr.min.js') }}"></script>
  <script src="{{ asset('backend/assets/js/dropify.min.js') }}"></script>
  <script src="{{ asset('backend/assets/js/script.js') }}"></script>
+ <script src="{{ asset('backend/assets/js/summernote.js') }}"></script>
  {{-- <script src="{{ asset('backend/assets/js/theme-customizer/customizer.js') }}"></script> --}}
  <!-- Plugin used-->
 
@@ -149,4 +150,25 @@
  </script>
  {{-- dropify end --}}
 
-{{-- stack('script') removed from here as it is handled by the main app layout. --}}
+ {{-- summernote start --}}
+ <script>
+     $('#summernote').summernote({
+         placeholder: 'Enter your content here...'
+         , tabsize: 2
+         , height: 200
+         , toolbar: [
+             ['style', ['style']]
+             , ['font', ['bold', 'underline', 'clear']]
+             , ['color', ['color']]
+             , ['para', ['ul', 'ol', 'paragraph']]
+             , ['table', ['table']]
+             , ['insert', ['link', 'picture', 'video']]
+             , ['view', ['fullscreen', 'codeview', 'help']]
+         ]
+     });
+
+ </script>
+ {{-- summernote end --}}
+
+
+ {{-- stack('script') removed from here as it is handled by the main app layout. --}}
