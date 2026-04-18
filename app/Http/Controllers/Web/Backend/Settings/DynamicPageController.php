@@ -249,22 +249,6 @@ class DynamicPageController extends Controller
         ]);
     }
 
-    // public function dynamicPageforApp(Request $request)
-    // {
-    //     $page = DynamicPage::where('status', 'active')
-    //         // ->where('page_slug',$request->query(, $defaultPerPage))
-    //         ->first();
-
-    //     if (! $page) {
-    //         return $this->error(null, 'Page not found.', 404);
-    //     }
-
-    //     return $this->success([
-    //         'title' => $page->page_title,
-    //         'slug' => $page->page_slug,
-    //         'content' => $page->page_content, // HTML content for app to render
-    //     ], 'Page retrieved successfully.');
-    // }
     public function dynamicPageforApp($slug)
     {
         $page = DynamicPage::select(['page_title', 'page_slug', 'banner', 'page_content'])
@@ -277,16 +261,10 @@ class DynamicPageController extends Controller
         }
 
         return $this->success([
-            // 'url' => url($page->page_slug),
             'banner'  => $page->banner,
             'title'   => $page->page_title,
             'content' => $page->page_content,
         ], 'Page retrieved successfully.');
-        // //
-
-        // return $this->success([
-        //     'title'   => $page->page_title,
-        //     'content' => $page->page_content,
-        // ], 'Page retrieved successfully.');
+       
     }
 }

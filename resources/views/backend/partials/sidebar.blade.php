@@ -52,33 +52,10 @@
                             <li><a href="/admin/profile">Profile Settings</a></li>
                             <li><a href="/admin/system-setting">System Settings</a></li>
                             <li><a href="/admin/dynamic-page">Dynamic Pages</a></li>
-                            <li><a href="#">Mail Settings</a></li>
-                            <li><a href="#">Social Settings</a></li>
+                            <li><a href="/admin/mail-setting">Mail Settings</a></li>
+                            <li><a href="/admin/social-media">Social Settings</a></li>
                         </ul>
                     </li>
-                    {{-- <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a
-                            class="sidebar-link sidebar-title link-nav" href="file-manager.html">
-
-                            <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" width="32"
-                                height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                                <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                                <path d="M9 17h6" />
-                                <path d="M9 13h6" />
-                            </svg>
-
-                            <svg class="fill-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                                viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                                <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                                <path d="M9 17h6" />
-                                <path d="M9 13h6" />
-                            </svg>
-
-                            <span>File manager</span></a>
-                    </li>  --}}
                 </ul>
             </div>
             <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>

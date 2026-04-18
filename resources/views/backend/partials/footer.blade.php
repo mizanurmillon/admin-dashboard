@@ -7,7 +7,8 @@
             <div class="col-md-6 p-0">
                 <p class="heart mb-0">Hand crafted &amp; made with
                     <svg class="footer-icon">
-                        <use href="{{ asset('backend') }}/assets/svg/icon-sprite.svg#heart"></use>
+                        <use href="{{ asset('backend/assets/svg/icon-sprite.svg#heart') }}"></use>
+
                     </svg>
                 </p>
             </div>
