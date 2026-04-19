@@ -27,6 +27,11 @@
                         </div>
                     </li>
 
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6 class="lan-1">General</h6>
+                        </div>
+                    </li>
                     <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="/admin/dashboard">
                             <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
@@ -34,6 +39,13 @@
                                 <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
                             </svg>
                             <span>Dashboard </span></a>
+                    </li>
+                    <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="/admin/users">
+                            <svg class="stroke-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" />
+                                <path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" />
+                            </svg>
+                            <span>Users</span></a>
                     </li>
 
                     <li class="sidebar-main-title">

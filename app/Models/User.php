@@ -19,6 +19,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
+        'is_primary',
         'name',
         'email',
         'password',
@@ -27,6 +28,7 @@ class User extends Authenticatable
         'remember_token',
         'avatar',
         'role',
+        'is_active',
         'password_reset_token',
     ];
 
@@ -54,6 +56,11 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime',
+            'agree_to_terms' => 'boolean',
+            'is_active' => 'boolean',
+            'is_primary' => 'boolean',
         ];
     }
 }

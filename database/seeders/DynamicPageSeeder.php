@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\DynamicPage;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class DynamicPageSeeder extends Seeder
 {
@@ -13,81 +12,29 @@ class DynamicPageSeeder extends Seeder
      */
     public function run(): void
     {
-        $pages = [
+        DynamicPage::insert([
             [
-                'page_title' => 'Home',
-                'page_slug' => 'home',
+                'page_title' => 'Terms of Service',
+                'page_slug' => 'terms-service',
                 'banner' => null,
-                'page_content' => '<p>Welcome to our homepage!</p>',
+                'page_content' =>" 
+                <p>1. Introduction</p><p>Welcome to iFire Protection.</p><p>By accessing or using our website and services, you agree to comply with these Terms of Service. Please read them carefully before using our site.</p><p><br></p><p>If you do not agree with any part of these terms, please do not use our website or purchase our products.</p><p><br></p><p>2. About Our Services</p><p>iFire Protection provides professional wildfire defense solutions, including equipment sales, installation, and consultation services for residential, commercial, and community clients.</p><p></p><p></p>
+                 ",
                 'status' => 'active',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'page_title' => 'About Us',
-                'page_slug' => 'about-us',
-                 'banner' => null,
-                'page_content' => '<p>About our company and team.</p>',
-                'status' => 'active',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'page_title' => 'Contact',
-                'page_slug' => 'contact',
+                'page_title' => 'Privacy Policies',
+                'page_slug' => 'privacy-policies',
                 'banner' => null,
-                'page_content' => '<p>Contact us via this page.</p>',
-                'status' => 'inactive',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'page_title' => 'Home',
-                'page_slug' => 'home',
-                'banner' => null,
-                'page_content' => '<p>Welcome to our homepage!</p>',
+                'page_content' =>" 
+                <p>1. Introduction</p><p>Welcome to iFire Protection.</p><p>By accessing or using our website and services, you agree to comply with these Terms of Service. Please read them carefully before using our site.</p><p><br></p><p>If you do not agree with any part of these terms, please do not use our website or purchase our products.</p><p><br></p><p>2. About Our Services</p><p>iFire Protection provides professional wildfire defense solutions, including equipment sales, installation, and consultation services for residential, commercial, and community clients.</p><p></p><p></p>
+                 ",
                 'status' => 'active',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            [
-                'page_title' => 'About Us',
-                'page_slug' => 'about-us',
-                 'banner' => null,
-                'page_content' => '<p>About our company and team.</p>',
-                'status' => 'active',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'page_title' => 'Contact',
-                'page_slug' => 'contact',
-                'banner' => null,
-                'page_content' => '<p>Contact us via this page.</p>',
-                'status' => 'inactive',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'page_title' => 'Home',
-                'page_slug' => 'home',
-                 'banner' => null,
-                'page_content' => '<p>Welcome to our homepage!</p>',
-                'status' => 'active',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'page_title' => 'About Us',
-                'page_slug' => 'about-us',
-                 'banner' => null,
-                'page_content' => '<p>About our company and team.</p>',
-                'status' => 'active',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-        ];
-
-        DB::table('dynamic_pages')->insert($pages);
+        ]);
     }
 }

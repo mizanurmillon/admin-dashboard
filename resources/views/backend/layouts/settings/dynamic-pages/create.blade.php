@@ -40,7 +40,9 @@
                             </div>
                             <div class="col-md-12">
                                 <label class="form-label" for="inputPassword4">Banner</label>
-                                <input class="form-control dropify  @error('banner') is-invalid @enderror" id="inputPassword4" type="file" placeholder="Enter Your Banner" data-default-file="{{ isset($page) ? asset($page->banner) : asset('backend/assets/images/image_placeholder.png') }}" name="banner">
+                                <input class="form-control dropify @error('banner') is-invalid @enderror" id="inputPassword4" type="file" data-default-file="{{ isset($page) && $page->banner ? asset($page->banner) : asset('backend/assets/images/image_placeholder.png') }}" name="banner">
+
+
                                 @error('banner')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

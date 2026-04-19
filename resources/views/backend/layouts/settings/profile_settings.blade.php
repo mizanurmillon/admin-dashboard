@@ -32,7 +32,7 @@
                                 <div class="d-flex align-items-center gap-3">
                                     <!-- Profile Image -->
                                     <div class="position-relative">
-                                        <img class="rounded-circle profile-picture" alt="" src="{{ asset($userDetails->avatar ?? 'backend/assets/images/user/7.jpg') }}" style="width: 70px; height: 70px; object-fit: cover;">
+                                        <img class="rounded-circle profile-picture" alt="" src="{{ asset($userDetails->avatar ?? 'backend/assets/images/dashboard/profile.png') }}" style="width: 70px; height: 70px; object-fit: cover;">
 
                                         <!-- Upload Button Icon on Image -->
                                         <div class="position-absolute bottom-0 end-0">
