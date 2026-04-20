@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
+use App\Http\Controllers\Api\DynamicPageController;
+use App\Http\Controllers\Api\System\SocialMediaController;
+use App\Http\Controllers\Api\System\SystemSettingController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,4 +42,20 @@ Route::middleware(['auth:sanctum', 'enabled'])->group(function () {
         Route::post('/change-password', 'passwordChange');
         Route::delete('/delete-account', 'deleteAccount');
     });
+});
+
+// Dynamic Pages
+Route::controller(DynamicPageController::class)->prefix('dynamic-pages')->group(function () {
+    Route::get('/', 'index');
+    Route::get('/{slug}', 'show');
+});
+
+// System Settings
+Route::controller(SystemSettingController::class)->prefix('system-settings')->group(function () {
+    Route::get('/', 'index');
+});
+
+// Social Media Links
+Route::controller(SocialMediaController::class)->prefix('social-media')->group(function () {
+    Route::get('/', 'index');
 });

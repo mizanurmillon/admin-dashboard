@@ -11,11 +11,7 @@ use Illuminate\Support\Facades\Validator;
 
 class SystemSettingController extends Controller
 {
-    /**
-     * Display the system settings page.
-     *
-     * @return View
-     */
+   
     public function index() {
 
         $setting = SystemSetting::latest('id')->first();

@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 box-col-5 col-md-6 proorder-md-2">
+            {{--  <div class="col-xl-3 box-col-5 col-md-6 proorder-md-2">
                 <div class="card">
                     <div class="card-header pb-0">
                         <div class="header-top">
@@ -388,7 +388,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  --}}
         </div>
     </div>
 
