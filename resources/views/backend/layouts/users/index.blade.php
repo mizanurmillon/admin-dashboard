@@ -26,7 +26,7 @@
                     <div class="table-responsive custom-scrollbar">
                         <div id="basic-1_wrapper" class="dataTables_wrapper no-footer">
                             <table class="dataTable no-footer hover" id="data-table" role="grid" aria-describedby="basic-1_info">
-                                <thead>
+                                <thead class="border-bottom">
                                     <tr role="row">
                                         <th>#</th>
                                         <th>Photo</th>
