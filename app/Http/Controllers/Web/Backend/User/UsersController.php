@@ -37,12 +37,13 @@ class UsersController extends Controller
                             }
                         })
                         ->addColumn('avatar', function (User $user) {
-                            $url = asset($user->avatar);
-
-                            if(empty($user->avatar)){
-                                $url = asset('backend/assets/images/user/3.jpg');
+                            if ($user->avatar) {
+                                $url = asset($user->avatar);
+                                return '<img src="' . $url . '" alt="' . $user->name . '" class="b-r-25 img-50 img-fluid profile-picture">';
                             }
-                            return '<img src="' . $url . '" alt="' . $user->name . '" class="b-r-25 img-50 img-fluid profile-picture">';
+
+                            $initial = $user->name ? mb_substr(trim($user->name), 0, 1) : '';
+                            return '<div class="profile-picture d-flex align-items-center justify-content-center" style="background: #2b5f60; border-radius: 50%; color: #fff; font-weight: 700; font-size: 18px; width: 50px; height: 50px; text-transform: uppercase;">' . e($initial) . '</div>';
                         })
                         ->addColumn('is_active', function (User $user) {
                             $checked = $user->is_active ? 'checked="checked"' : '';

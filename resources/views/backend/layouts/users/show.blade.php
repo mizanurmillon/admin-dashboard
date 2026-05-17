@@ -22,10 +22,18 @@
         transform: scale(1.03);
     }
 
-    .social-profile .social-img img {
+    .social-profile .social-img img,
+    .social-profile .social-img .initials-avatar {
         width: 100%;
         height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         object-fit: cover;
+        font-size: 38px;
+        font-weight: 700;
+        color: #1f2937;
+        text-transform: uppercase;
     }
 
     .social-profile .active-badge {
@@ -77,6 +85,7 @@
     }
 
 </style>
+
 @endpush
 @section('page-content')
 
@@ -89,7 +98,16 @@
                 <div class="card-body text-center p-5">
                     <div class="social-img-wrap">
                         <div class="social-img">
-                            <img src="{{ $user->avatar ? asset($user->avatar) : asset('backend/assets/images/user/3.jpg') }}" alt="{{ $user->name }}">
+                            @php
+                            $name = trim($user->name);
+                            $firstLetter = $name !== '' ? mb_substr($name, 0, 1) : '';
+                            @endphp
+
+                            @if ($user->avatar)
+                            <img src="{{ asset($user->avatar) }}" alt="{{ $user->name }}">
+                            @else
+                            <div class="initials-avatar">{{ $firstLetter }}</div>
+                            @endif
                         </div>
                         @if($user->is_active)
                         <div class="active-badge shadow-lg">

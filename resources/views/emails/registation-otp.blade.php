@@ -1,68 +1,161 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Verification Code</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            padding: 20px;
-            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f3f4f6;
+            color: #333333;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        .container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            background-color: #f3f4f6;
+            padding: 40px 0;
+        }
+
+        .main-container {
+            background-color: #ffffff;
+            margin: 0 auto;
+            width: 100%;
             max-width: 600px;
-            margin: auto;
-            border: 1px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
 
-        h2 {
-            color: #333;
+        .header {
+            background-color: #4f46e5;
+            padding: 32px 40px;
+            text-align: center;
         }
 
-        .code {
+        .header h1 {
+            color: #ffffff;
+            margin: 0;
             font-size: 24px;
             font-weight: bold;
-            color: #007bff;
-            margin: 20px 0;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .greeting {
+            font-size: 20px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #4b5563;
+            margin-bottom: 25px;
+        }
+
+        .otp-container {
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        .otp-code {
+            display: inline-block;
+            background-color: #eef2ff;
+            color: #4f46e5;
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 8px;
+            padding: 16px 32px;
+            border-radius: 8px;
+            margin: 0;
+            border: 2px dashed #c7d2fe;
+        }
+
+        .warning-box {
+            background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 15px 20px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #92400e;
         }
 
         .footer {
+            padding: 30px 40px;
+            background-color: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0 0 10px 0;
             font-size: 14px;
-            color: #777;
-            margin-top: 20px;
+            color: #6b7280;
+            line-height: 1.5;
         }
 
         .footer a {
-            color: #007bff;
-            text-decoration: none;
+            color: #4f46e5;
+            text-decoration: underline;
         }
+
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <p>Dear {{ $user->name }},</p>
+    <center class="wrapper">
+        <table class="main-container" width="100%" cellpadding="0" cellspacing="0">
+            <!-- Header -->
+            <tr>
+                <td class="header">
+                    <h1>{{ config('app.name') }}</h1>
+                </td>
+            </tr>
 
-        <p>Thank you for registering with [Company_Name].</p>
-        <p>To complete your registration, please enter the following verification code:</p>
+            <!-- Content -->
+            <tr>
+                <td class="content">
+                    <div class="greeting">Dear {{ $user->name }},</div>
 
-        <p>Code: <span class="code">{{ $code }}</span></p>
+                    <div class="message">
+                        Thank you for registering with {{ config('app.name') }}. To complete your registration and verify your email address, please use the following One-Time Password (OTP):
+                    </div>
 
-        <p>This code is valid for 3 minute. Please keep it confidential for security purposes. If you did not initiate
-            this registration, feel free to disregard this email.</p>
+                    <div class="otp-container">
+                        <div class="otp-code">{{ $code }}</div>
+                    </div>
 
-        <p>Best regards,</p>
-        <p>[Company_Name]</p>
-        <p>[Contact Information]</p>
-    </div>
+                    <div class="warning-box">
+                        <strong>Security Notice:</strong> This OTP code is valid for 3 minutes. Please keep it confidential for security purposes. Our team will never ask for your password or OTP.
+                    </div>
+
+                    <div class="message" style="margin-bottom: 0;">
+                        If you did not initiate this registration, you can safely disregard this email.
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+                <td class="footer">
+                    <p>Best regards,<br>
+                        <strong>{{ config('app.name') }}</strong></p>
+                    {{-- [Contact Information]  --}}
+                </td>
+            </tr>
+        </table>
+    </center>
 </body>
-
 </html>

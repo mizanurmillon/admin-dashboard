@@ -8,8 +8,12 @@
         top: 19px;
         transform: translateY(-50%);
     }
-
+    .img-container img {
+        max-width: 100%;
+        max-height: 500px;
+    }
 </style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet">
 @endpush
 @section('page-content')
 
@@ -31,18 +35,28 @@
                             <div class="profile-title">
                                 <div class="d-flex align-items-center gap-3">
                                     <!-- Profile Image -->
-                                    <div class="position-relative">
-                                        <img class="rounded-circle profile-picture" alt="" src="{{ asset($userDetails->avatar ?? 'backend/assets/images/dashboard/profile.png') }}" style="width: 70px; height: 70px; object-fit: cover;">
+                                    <div class="position-relative d-inline-block" style="width: 70px; height: 70px;">
+                                        @php
+                                        $name = trim($userDetails->name);
+                                        $firstLetter = $name !== '' ? mb_substr($name, 0, 1) : '';
+                                        @endphp
+
+                                        <img class="rounded-circle profile-picture {{ $userDetails->avatar ? '' : 'd-none' }}" alt="" src="{{ $userDetails->avatar ? asset($userDetails->avatar) : '#' }}" style="width: 70px; height: 70px; object-fit: cover;">
+                                        
+                                        @if(!$userDetails->avatar)
+                                        <div class="profile-fallback d-flex align-items-center justify-content-center" style="background: #2b5f60; width: 70px; height: 70px; border-radius: 50%; color: #fff; font-size: 28px; font-weight: 700; text-transform: uppercase;">
+                                            {{ $firstLetter }}
+                                        </div>
+                                        @endif
 
                                         <!-- Upload Button Icon on Image -->
-                                        <div class="position-absolute bottom-0 end-0">
+                                        <div class="position-absolute" style="bottom: 0; right: 0; transform: translate(15%, 15%);">
                                             <input type="file" name="profile_picture" id="profile_picture_input" hidden>
-                                            <label for="profile_picture_input" class="bg-light rounded-circle shadow-sm" style="cursor: pointer;  width: 23px; display: flex; height: 23px; justify-content: center; align-items: center;">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b9294" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-cloud-up">
+                                            <label for="profile_picture_input" class="bg-white rounded-circle shadow border" style="cursor: pointer; width: 28px; height: 28px; display: flex; justify-content: center; align-items: center; transition: all 0.2s;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2b5f60" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-camera">
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M12 18.004h-5.343c-2.572 -.004 -4.657 -2.011 -4.657 -4.487c0 -2.475 2.085 -4.482 4.657 -4.482c.393 -1.762 1.794 -3.2 3.675 -3.773c1.88 -.572 3.956 -.193 5.444 1c1.488 1.19 2.162 3.007 1.77 4.769h.99c1.38 0 2.57 .811 3.128 1.986" />
-                                                    <path d="M19 22v-6" />
-                                                    <path d="M22 19l-3 -3l-3 3" />
+                                                    <path d="M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2" />
+                                                    <path d="M9 13a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                                                 </svg>
                                             </label>
                                         </div>
@@ -153,47 +167,120 @@
         </div>
     </div>
 </div>
+
+<!-- Crop Modal -->
+<div class="modal fade" id="cropModal" tabindex="-1" aria-labelledby="cropModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cropModalLabel">Crop Profile Picture</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="img-container text-center">
+                    <img id="imageToCrop" src="" alt="Picture" style="max-width: 100%; display: block;">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="cropAndUpload">Crop & Upload</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Container-fluid Ends-->
 @endsection
 @push('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
 <script>
+    let cropper;
+    const image = document.getElementById('imageToCrop');
+    let cropModal;
+
     $(document).ready(function() {
-        $('#profile_picture_input').change(function() {
+        cropModal = new bootstrap.Modal(document.getElementById('cropModal'), {
+            backdrop: 'static'
+        });
 
-            const file = $(this)[0].files[0];
-            if (!file) {
-                toastr.error('Please select an image first.');
-                return;
+        $('#profile_picture_input').change(function(e) {
+            const files = e.target.files;
+            if (files && files.length > 0) {
+                const file = files[0];
+                
+                // Ensure the file is an image
+                if (!file.type.match('image.*')) {
+                    toastr.error('Please select an image file.');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    image.src = event.target.result;
+                    cropModal.show();
+                };
+                reader.readAsDataURL(file);
             }
+        });
 
-            const formData = new FormData();
-            formData.append('profile_picture', file);
-            formData.append('_token', '{{ csrf_token() }}');
-
-            $.ajax({
-                url: '{{ route('update.profile.picture') }}'
-                , type: 'POST'
-                , data: formData
-                , processData: false
-                , contentType: false
-                , success: function(data) {
-                    if (data.success) {
-                        // Prevent image caching
-                        let newImageUrl = data.image_url + '?v=' + new Date().getTime();
-                        $('.profile-picture').attr('src', newImageUrl);
-
-                        toastr.success('Profile picture updated successfully.');
-                    } else {
-                        toastr.error(data.message);
-                    }
-                }
-                , error: function(xhr) {
-                    toastr.error('Something went wrong!');
-                    console.log(xhr.responseText);
-                }
+        $('#cropModal').on('shown.bs.modal', function() {
+            cropper = new Cropper(image, {
+                aspectRatio: 1,
+                viewMode: 1,
+                autoCropArea: 1,
+                responsive: true,
+                background: false
             });
+        }).on('hidden.bs.modal', function() {
+            if (cropper) {
+                cropper.destroy();
+                cropper = null;
+            }
+            $('#profile_picture_input').val(''); // Reset file input
+        });
+
+        $('#cropAndUpload').click(function() {
+            if (!cropper) return;
+            
+            cropper.getCroppedCanvas({
+                width: 400,
+                height: 400
+            }).toBlob(function(blob) {
+                const formData = new FormData();
+                formData.append('profile_picture', blob, 'profile.jpg');
+                formData.append('_token', '{{ csrf_token() }}');
+
+                const btn = $('#cropAndUpload');
+                const originalText = btn.text();
+                btn.text('Uploading...').prop('disabled', true);
+
+                $.ajax({
+                    url: '{{ route('update.profile.picture') }}',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        if (data.success) {
+                            let newImageUrl = data.image_url + '?v=' + new Date().getTime();
+                            $('.profile-picture').attr('src', newImageUrl).removeClass('d-none');
+                            $('.profile-fallback').addClass('d-none');
+                            toastr.success('Profile picture updated successfully.');
+                            cropModal.hide();
+                        } else {
+                            toastr.error(data.message || 'Failed to update profile picture.');
+                        }
+                    },
+                    error: function(xhr) {
+                        toastr.error('Something went wrong!');
+                        console.log(xhr.responseText);
+                    },
+                    complete: function() {
+                        btn.text(originalText).prop('disabled', false);
+                    }
+                });
+            }, 'image/jpeg', 0.9);
         });
     });
-
 </script>
 @endpush

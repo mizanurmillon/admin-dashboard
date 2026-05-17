@@ -1,15 +1,10 @@
 <div class="page-header">
     <div class="header-wrapper row m-0">
         <div class="header-logo-wrapper col-auto p-0">
-            <div class="logo-wrapper"><a href="{{ route('admin.dashboard') }}"> <img class="img-fluid for-light"
-                        src="{{ asset($systemSetting->logo ?? 'backend/assets/images/logo/logo-icon.png') }}" alt=""><img
-                        class="img-fluid for-dark" src="{{ asset($systemSetting->logo_dark ?? 'backend/assets/images/logo/logo_dark.png') }}"
-                        alt=""></a></div>
+            <div class="logo-wrapper"><a href="{{ route('admin.dashboard') }}"> <img class="img-fluid for-light" src="{{ asset($systemSetting->logo ?? 'backend/assets/images/logo/logo-icon.png') }}" alt=""><img class="img-fluid for-dark" src="{{ asset($systemSetting->logo_dark ?? 'backend/assets/images/logo/logo_dark.png') }}" alt=""></a></div>
             <div class="toggle-sidebar">
 
-                <svg class="sidebar-toggle" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                    viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round"
-                    stroke-linejoin="round">
+                <svg class="sidebar-toggle" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M14 4h6v6h-6z" />
                     <path d="M4 14h6v6h-6z" />
                     <path d="M17 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
@@ -22,13 +17,10 @@
             <div class="form-group">
                 <div class="Typeahead Typeahead--twitterUsers">
                     <div class="u-posRelative">
-                        <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text"
-                            placeholder="Type to Search .." name="q" title="" autofocus>
+                        <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text" placeholder="Type to Search .." name="q" title="" autofocus>
                         <svg class="search-bg svg-color">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round"
-                                stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
                                 <path d="M21 21l-6 -6" />
                             </svg>
@@ -43,9 +35,7 @@
                 <li class="serchinput">
                     <div class="serchbox">
                         <svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round"
-                                stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
                                 <path d="M21 21l-6 -6" />
                             </svg>
@@ -58,11 +48,8 @@
                 <li class="onhover-dropdown">
                     <div class="notification-box">
 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                            fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path
-                                d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
                             <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
                         </svg>
 
@@ -80,58 +67,47 @@
                                             </a><span>Today 11:45pm</span></div>
                                     </div>
                                     <div class="notification-btn">
-                                        <button class="btn btn-pill btn-primary" type="button"
-                                            title="btn btn-pill btn-primary">Accpet</button>
-                                        <button class="btn btn-pill btn-secondary" type="button"
-                                            title="btn btn-pill btn-primary">Decline</button>
+                                        <button class="btn btn-pill btn-primary" type="button" title="btn btn-pill btn-primary">Accpet</button>
+                                        <button class="btn btn-pill btn-secondary" type="button" title="btn btn-pill btn-primary">Decline</button>
                                     </div>
                                     <div class="show-btn"><a href="index.html"> <span>Show</span></a></div>
                                 </li>
                                 <li>
                                     <div class="user-notification">
-                                        <div><img src="{{ asset('backend/assets/images/avtar/17.jpg') }}"
-                                                alt="avatar"></div>
+                                        <div><img src="{{ asset('backend/assets/images/avtar/17.jpg') }}" alt="avatar"></div>
                                         <div class="user-description"><a href="letter-box.html">
                                                 <h4>Congrats! you all task for today.</h4>
                                             </a><span>Today 01:05pm</span></div>
                                     </div>
                                     <div class="notification-btn">
-                                        <button class="btn btn-pill btn-primary" type="button"
-                                            title="btn btn-pill btn-primary">Accpet</button>
-                                        <button class="btn btn-pill btn-secondary" type="button"
-                                            title="btn btn-pill btn-primary">Decline</button>
+                                        <button class="btn btn-pill btn-primary" type="button" title="btn btn-pill btn-primary">Accpet</button>
+                                        <button class="btn btn-pill btn-secondary" type="button" title="btn btn-pill btn-primary">Decline</button>
                                     </div>
                                     <div class="show-btn"><a href="index.html"> <span>Show</span></a></div>
                                 </li>
                                 <li>
                                     <div class="user-notification">
-                                        <div> <img src="{{ asset('backend/assets/images/avtar/18.jpg') }}"
-                                                alt="avatar"></div>
+                                        <div> <img src="{{ asset('backend/assets/images/avtar/18.jpg') }}" alt="avatar"></div>
                                         <div class="user-description"><a href="letter-box.html">
                                                 <h4>You have new in landing page design.</h4>
                                             </a><span>Today 06:55pm</span></div>
                                     </div>
                                     <div class="notification-btn">
-                                        <button class="btn btn-pill btn-primary" type="button"
-                                            title="btn btn-pill btn-primary">Accpet</button>
-                                        <button class="btn btn-pill btn-secondary" type="button"
-                                            title="btn btn-pill btn-primary">Decline</button>
+                                        <button class="btn btn-pill btn-primary" type="button" title="btn btn-pill btn-primary">Accpet</button>
+                                        <button class="btn btn-pill btn-secondary" type="button" title="btn btn-pill btn-primary">Decline</button>
                                     </div>
                                     <div class="show-btn"><a href="index.html"> <span>Show</span></a></div>
                                 </li>
                                 <li>
                                     <div class="user-notification">
-                                        <div><img src="{{ asset('backend/assets/images/avtar/19.jpg') }}"
-                                                alt="avatar"></div>
+                                        <div><img src="{{ asset('backend/assets/images/avtar/19.jpg') }}" alt="avatar"></div>
                                         <div class="user-description"><a href="letter-box.html">
                                                 <h4>Congrats! you all task for today.</h4>
                                             </a><span>Today 06:55pm</span></div>
                                     </div>
                                     <div class="notification-btn">
-                                        <button class="btn btn-pill btn-primary" type="button"
-                                            title="btn btn-pill btn-primary">Accpet</button>
-                                        <button class="btn btn-pill btn-secondary" type="button"
-                                            title="btn btn-pill btn-primary">Decline</button>
+                                        <button class="btn btn-pill btn-primary" type="button" title="btn btn-pill btn-primary">Accpet</button>
+                                        <button class="btn btn-pill btn-secondary" type="button" title="btn btn-pill btn-primary">Decline</button>
                                     </div>
                                     <div class="show-btn"> <a href="index.html"> <span>Show</span></a></div>
                                 </li>
@@ -142,24 +118,19 @@
                 </li>
                 <li>
                     <div class="mode">
-                        <svg class="for-dark" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                            viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1"
-                            stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="for-dark" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
                         </svg>
 
-                        <svg class="for-light" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                            viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1"
-                            stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="for-light" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
-                            <path
-                                d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+                            <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
                         </svg>
 
 
                     </div>
                 </li>
-                {{--  <li class="language-nav">
+                {{-- <li class="language-nav">
                     <div class="translate_wrapper">
                         <div class="current_lang">
                             <div class="lang"><i class="flag-icon flag-icon-gb"></i><span
@@ -184,19 +155,38 @@
                     </div>
                 </li>  --}}
                 <li class="profile-nav onhover-dropdown pe-0 py-0">
-                    <div class="d-flex align-items-center profile-media"><img class="b-r-25 img-50 img-fluid profile-picture"
-                            src="{{ asset(auth()->user()->avatar ?? 'backend/assets/images/dashboard/profile.png') }}" alt="">
+                    <div class="d-flex align-items-center profile-media">
+                        @php
+                        $name = trim(auth()->user()->name);
+                        $firstLetter = $name !== '' ? mb_substr($name, 0, 1) : '';
+                        @endphp
+
+                        <img class="b-r-25 img-50 img-fluid profile-picture {{ auth()->user()->avatar ? '' : 'd-none' }}" src="{{ auth()->user()->avatar ? asset(auth()->user()->avatar) : '#' }}" alt="{{ auth()->user()->name }}">
+                        
+                        @if(!auth()->user()->avatar)
+                        <div class="b-r-25 img-50 profile-fallback" style="
+                            width: 50px;
+                            height: 50px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 22px;
+                            font-weight: 700;
+                            color: #fff;
+                            background: #2b5f60;
+                            border-radius: 50%;
+                            text-transform: uppercase;
+                            margin-right: 15px;">
+                            {{ $firstLetter }}
+                        </div>
+                        @endif
+
+
                         <div class="flex-grow-1 user"><span>{{ Auth::user()->name }}</span>
                             <p class="mb-0 font-nunito">{{ Auth::user()->role }}
-                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0"
-                                    y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512"
-                                    xml:space="preserve" class="">
-                                    <g
-                                        transform="matrix(0.5099999999999995,0,0,0.5099999999999995,7.839999649524694,7.839929203987129)">
-                                        <path
-                                            d="M29.604 10.528 17.531 23.356a2.102 2.102 0 0 1-3.062 0L2.396 10.528c-.907-.964-.224-2.546 1.1-2.546h25.008c1.324 0 2.007 1.582 1.1 2.546z"
-                                            fill="#000000" opacity="1" data-original="#000000" class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+                                    <g transform="matrix(0.5099999999999995,0,0,0.5099999999999995,7.839999649524694,7.839929203987129)">
+                                        <path d="M29.604 10.528 17.531 23.356a2.102 2.102 0 0 1-3.062 0L2.396 10.528c-.907-.964-.224-2.546 1.1-2.546h25.008c1.324 0 2.007 1.582 1.1 2.546z" fill="#000000" opacity="1" data-original="#000000" class="">
                                         </path>
                                     </g>
                                 </svg>
