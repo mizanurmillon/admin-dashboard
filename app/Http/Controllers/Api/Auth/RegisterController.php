@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Api\Auth;
 
-use Carbon\Carbon;
-use App\Models\User;
-use App\Models\EmailOtp;
-use App\Traits\ApiResponse;
-use App\Mail\RegistationOtp;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\RegistationOtp;
+use App\Models\EmailOtp;
+use App\Models\User;
+use App\Notifications\UserNotification;
+use App\Traits\ApiResponse;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -67,7 +68,9 @@ class RegisterController extends Controller
             return $this->error($validator->errors(), $validator->errors()->first(), 422);
         }
 
-         try {
+        $admin = User::where('role', 'admin')->first();
+
+        try {
             // Find the user by ID
             $user                 = new User();
             $user->name           = $request->input('name');
@@ -79,6 +82,12 @@ class RegisterController extends Controller
 
             $this->sendOtp($user);
 
+            $admin->notify(new UserNotification(
+                subject: 'New User Registration',
+                message: 'A new user has registered with the email: ' . $user->email,
+                type: 'success',
+                user: $user
+            ));
             return $this->success($user, 'Verification email sent', 201);
         } catch (\Exception $e) {
             return $this->error([], $e->getMessage(), 500);
@@ -117,6 +126,8 @@ class RegisterController extends Controller
             return $this->error($validator->errors(), $validator->errors()->first(), 422);
         }
 
+        $admin = User::where('role', 'admin')->first();
+
         $user = User::where('email', $request->input('email'))->first();
 
         if (!$user) {
@@ -145,6 +156,13 @@ class RegisterController extends Controller
         // Create Sanctum token
         $token = $user->createToken('auth_token')->plainTextToken;
         $user->setAttribute('token', $token);
+
+        $admin->notify(new UserNotification(
+            subject: 'User Email Verified',
+            message: 'A user has verified their email: ' . $user->email,
+            type: 'success',
+            user: $user
+        ));
 
         return $this->success($user, 'Email verified successfully', 200);
     }

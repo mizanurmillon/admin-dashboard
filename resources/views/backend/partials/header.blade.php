@@ -52,66 +52,20 @@
                             <path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
                             <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
                         </svg>
+                        <span id="notification-badge" class="badge badge-danger" style="display:none; position: absolute; top: -5px; right: -5px; border-radius: 50%; padding: 2px 6px; font-size: 11px;">0</span>
 
                     </div>
                     <div class="onhover-show-div notification-dropdown">
                         <h6 class="f-18 mb-0 dropdown-title">Notifications</h6>
                         <div class="notification-card">
-                            <ul>
+                            <ul id="notification-list">
                                 <li>
                                     <div class="user-notification">
-                                        <div><img src="{{ asset('backend/assets/images/avtar/2.jpg') }}" alt="avatar">
+                                        <div class="user-description">
+                                            <h4>Loading...</h4>
                                         </div>
-                                        <div class="user-description"><a href="letter-box.html">
-                                                <h4>You have new finical page design.</h4>
-                                            </a><span>Today 11:45pm</span></div>
                                     </div>
-                                    <div class="notification-btn">
-                                        <button class="btn btn-pill btn-primary" type="button" title="btn btn-pill btn-primary">Accpet</button>
-                                        <button class="btn btn-pill btn-secondary" type="button" title="btn btn-pill btn-primary">Decline</button>
-                                    </div>
-                                    <div class="show-btn"><a href="index.html"> <span>Show</span></a></div>
                                 </li>
-                                <li>
-                                    <div class="user-notification">
-                                        <div><img src="{{ asset('backend/assets/images/avtar/17.jpg') }}" alt="avatar"></div>
-                                        <div class="user-description"><a href="letter-box.html">
-                                                <h4>Congrats! you all task for today.</h4>
-                                            </a><span>Today 01:05pm</span></div>
-                                    </div>
-                                    <div class="notification-btn">
-                                        <button class="btn btn-pill btn-primary" type="button" title="btn btn-pill btn-primary">Accpet</button>
-                                        <button class="btn btn-pill btn-secondary" type="button" title="btn btn-pill btn-primary">Decline</button>
-                                    </div>
-                                    <div class="show-btn"><a href="index.html"> <span>Show</span></a></div>
-                                </li>
-                                <li>
-                                    <div class="user-notification">
-                                        <div> <img src="{{ asset('backend/assets/images/avtar/18.jpg') }}" alt="avatar"></div>
-                                        <div class="user-description"><a href="letter-box.html">
-                                                <h4>You have new in landing page design.</h4>
-                                            </a><span>Today 06:55pm</span></div>
-                                    </div>
-                                    <div class="notification-btn">
-                                        <button class="btn btn-pill btn-primary" type="button" title="btn btn-pill btn-primary">Accpet</button>
-                                        <button class="btn btn-pill btn-secondary" type="button" title="btn btn-pill btn-primary">Decline</button>
-                                    </div>
-                                    <div class="show-btn"><a href="index.html"> <span>Show</span></a></div>
-                                </li>
-                                <li>
-                                    <div class="user-notification">
-                                        <div><img src="{{ asset('backend/assets/images/avtar/19.jpg') }}" alt="avatar"></div>
-                                        <div class="user-description"><a href="letter-box.html">
-                                                <h4>Congrats! you all task for today.</h4>
-                                            </a><span>Today 06:55pm</span></div>
-                                    </div>
-                                    <div class="notification-btn">
-                                        <button class="btn btn-pill btn-primary" type="button" title="btn btn-pill btn-primary">Accpet</button>
-                                        <button class="btn btn-pill btn-secondary" type="button" title="btn btn-pill btn-primary">Decline</button>
-                                    </div>
-                                    <div class="show-btn"> <a href="index.html"> <span>Show</span></a></div>
-                                </li>
-                                <li> <a class="f-w-700" href="letter-box.html">Check all </a></li>
                             </ul>
                         </div>
                     </div>
@@ -162,7 +116,7 @@
                         @endphp
 
                         <img class="b-r-25 img-50 img-fluid profile-picture {{ auth()->user()->avatar ? '' : 'd-none' }}" src="{{ auth()->user()->avatar ? asset(auth()->user()->avatar) : '#' }}" alt="{{ auth()->user()->name }}">
-                        
+
                         @if(!auth()->user()->avatar)
                         <div class="b-r-25 img-50 profile-fallback" style="
                             width: 50px;
@@ -218,5 +172,70 @@
             </div>
           </script>
         <script class="empty-template" type="text/x-handlebars-template"><div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div></script>
+
+        <script>
+            (function() {
+                const baseUrl = "{{ url('admin/notifications') }}";
+
+                const fetchNotifications = () => {
+                    fetch("{{ route('notifications.fetch') }}")
+                        .then(res => res.json())
+                        .then(data => {
+                            const list = document.getElementById('notification-list');
+                            const badge = document.getElementById('notification-badge');
+
+                            // Update badge
+                            if (data.unreadCount > 0) {
+                                badge.textContent = data.unreadCount;
+                                badge.style.display = 'block';
+                            } else {
+                                badge.style.display = 'none';
+                            }
+
+                            // Build notification items
+                            let html = '';
+                            if (data.notifications.length === 0) {
+                                html = '<li><div class="user-notification"><div class="user-description"><h4>No new notifications</h4></div></div></li>';
+                            } else {
+                                data.notifications.forEach(n => {
+                                    html += `
+                                                <li>
+                                                    <div class="user-notification">
+                                                        <div><img src="${n.avatar}" alt="avatar"></div>
+                                                        <div class="user-description"><a href="{{ route("notifications.index") }}">
+                                                                <h4>${n.subject}</h4>
+                                                            </a><span>${n.time}</span></div>
+                                                    </div>
+                                                    <div class="notification-btn">
+                                                        <form method="POST" action="${baseUrl}/${n.id}/read" style="display:inline">
+                                                            @csrf
+                                                            <button class="btn btn-pill btn-primary" type="submit" title="Mark as read">Accept</button>
+                                                        </form>
+                                                        <form method="POST" action="${baseUrl}/${n.id}" style="display:inline">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button class="btn btn-pill btn-secondary" type="submit" title="Delete notification">Decline</button>
+                                                        </form>
+                                                    </div>
+                                                    {{--  <div class="show-btn"><a href="${n.url}"> <span>Show</span></a></div>  --}}
+                                                </li>
+                                            `;
+                                });
+                            }
+                            html += '<li> <a class="f-w-700" href="{{ route("notifications.index") }}">Check all </a></li>';
+                            list.innerHTML = html;
+                        })
+                        .catch(err => console.error('Notification fetch error:', err));
+                };
+
+                // Fetch on page load
+                fetchNotifications();
+
+                // Auto-fetch every 5 seconds
+                setInterval(fetchNotifications, 5000);
+            })();
+
+        </script>
+
     </div>
 </div>
