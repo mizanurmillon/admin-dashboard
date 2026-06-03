@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'firebase' => [
+        'credentials_file' => storage_path('app/firebase-525d6-firebase-adminsdk-fbsvc-62a8671984.json'),
+    ],
+
 ];

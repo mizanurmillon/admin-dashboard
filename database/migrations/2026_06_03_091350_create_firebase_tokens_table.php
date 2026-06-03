@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('social_media', function (Blueprint $table) {
+        Schema::create('firebase_tokens', function (Blueprint $table) {
             $table->id();
-            $table->string('social_media', 50)->nullable();
-            $table->string('profile_link', 255)->nullable();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->string('token', 255);
+            $table->string('device_id', 50)->nullable();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('social_media');
+        Schema::dropIfExists('firebase_tokens');
     }
 };

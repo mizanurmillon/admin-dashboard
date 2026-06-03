@@ -3,10 +3,12 @@
 use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\DynamicPageController;
+use App\Http\Controllers\Api\FirebaseTokenController;
 use App\Http\Controllers\Api\System\SocialMediaController;
 use App\Http\Controllers\Api\System\SystemSettingController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
+
 
 //Register API
 Route::middleware('throttle:5,1')->controller(RegisterController::class)->prefix('users')->group(function () {
@@ -42,6 +44,12 @@ Route::middleware(['auth:sanctum', 'enabled'])->group(function () {
         Route::post('/change-password', 'passwordChange');
         Route::delete('/delete-account', 'deleteAccount');
     });
+
+    //Firebase Token Routes Here
+    Route::controller(FirebaseTokenController::class)->group(function () {
+        Route::post('/firebase-token/add', 'updateFirebaseToken');
+        Route::delete('/firebase-token/delete', 'deleteFirebaseToken');
+    });
 });
 
 // Dynamic Pages
@@ -59,3 +67,4 @@ Route::controller(SystemSettingController::class)->prefix('system-settings')->gr
 Route::controller(SocialMediaController::class)->prefix('social-media')->group(function () {
     Route::get('/', 'index');
 });
+
