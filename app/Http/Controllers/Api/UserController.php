@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         $user = auth()->user();
 
-        if (!$user) {
+        if (! $user) {
             return $this->error([], 'User not found', 404);
         }
 
@@ -26,8 +26,9 @@ class UserController extends Controller
     public function updateProfile(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'avatar'  => 'nullable|image|mimes:jpeg,png,jpg,svg|max:5120',
-            'name'    => 'required|string|max:255',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,svg|max:5120',
+            'first_name' => 'required|string|max:100',
+            'last_name' => 'nullable|string|max:100',
         ]);
 
         if ($validator->fails()) {
@@ -39,8 +40,8 @@ class UserController extends Controller
             $user = auth()->user();
 
             // If user is not found, return an error response
-            if (!$user) {
-                return $this->error([], "User Not Found", 404);
+            if (! $user) {
+                return $this->error([], 'User Not Found', 404);
             }
 
             if ($request->hasFile('avatar')) {
@@ -52,14 +53,15 @@ class UserController extends Controller
                     }
                 }
 
-                $image     = $request->file('avatar');
+                $image = $request->file('avatar');
                 $imageName = uploadImage($image, 'User/Avatar');
             } else {
                 $imageName = $user->avatar;
             }
 
-            $user->name    = $request->name;
-            $user->avatar  = $imageName;
+            $user->first_name = $request->input('first_name');
+            $user->last_name = $request->input('last_name');
+            $user->avatar = $imageName;
 
             $user->save();
 
@@ -80,11 +82,11 @@ class UserController extends Controller
     {
         try {
             $user = auth()->user();
-            
-            if (!$user) {
+
+            if (! $user) {
                 return $this->error([], 'User not found', 404);
             }
-            
+
             // Delete the user's avatar if it exists
             if ($user->avatar) {
                 $previousImagePath = public_path($user->avatar);
@@ -105,16 +107,16 @@ class UserController extends Controller
     /**
      * Change Login User Password
      *
-     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\JsonResponse JSON response with success or error.
      */
-    public function passwordChange(Request $request) {
+    public function passwordChange(Request $request)
+    {
         // Get the authenticated user
         $user = auth()->user();
 
         // If user is not found, return an error response
-        if (!$user) {
-            return $this->error([], "User Not Found", 404);
+        if (! $user) {
+            return $this->error([], 'User Not Found', 404);
         }
 
         // Validate request inputs
@@ -128,8 +130,8 @@ class UserController extends Controller
         }
 
         // Check if the current password matches
-        if (!Hash::check($request->current_password, $user->password)) {
-            return $this->error([], "Current password is incorrect", 400);
+        if (! Hash::check($request->current_password, $user->password)) {
+            return $this->error([], 'Current password is incorrect', 400);
         }
 
         // Update the password securely
@@ -137,6 +139,6 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return $this->success($user->fresh(), "Password changed successfully", 200);
+        return $this->success($user->fresh(), 'Password changed successfully', 200);
     }
 }

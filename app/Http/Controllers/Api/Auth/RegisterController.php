@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
-     use ApiResponse;
+    use ApiResponse;
 
     /**
      * Send a Register (OTP) to the user via email.
@@ -24,7 +24,6 @@ class RegisterController extends Controller
      * @param  \App\Models\User  $user
      * @return void
      */
-
     private function sendOtp($user)
     {
         $code = rand(1000, 9999);
@@ -34,7 +33,7 @@ class RegisterController extends Controller
             ['user_id' => $user->id],
             [
                 'verification_code' => $code,
-                'expires_at'        => Carbon::now()->addMinutes(3),
+                'expires_at' => Carbon::now()->addMinutes(3),
             ]
         );
 
@@ -45,15 +44,15 @@ class RegisterController extends Controller
      * Register User
      *
      * @param  \Illuminate\Http\Request  $request  The HTTP request with the register query.
-     * @return \Illuminate\Http\JsonResponse  JSON response with success or error.
+     * @return \Illuminate\Http\JsonResponse JSON response with success or error.
      */
-
     public function Register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name'           => 'required|string|max:255',
-            'email'          => 'required|email|unique:users,email',
-            'password'       => [
+            'first_name' => 'required|string|max:100',
+            'last_name' => 'nullable|string|max:100',
+            'email' => 'required|email|unique:users,email',
+            'password' => [
                 'required',
                 'string',
                 'min:8',
@@ -72,10 +71,11 @@ class RegisterController extends Controller
 
         try {
             // Find the user by ID
-            $user                 = new User();
-            $user->name           = $request->input('name');
-            $user->email          = $request->input('email');
-            $user->password       = Hash::make($request->input('password')); // Hash the password
+            $user = new User;
+            $user->first_name = $request->input('first_name');
+            $user->last_name = $request->input('last_name');
+            $user->email = $request->input('email');
+            $user->password = Hash::make($request->input('password')); // Hash the password
             $user->agree_to_terms = $request->input('agree_to_terms');
 
             $user->save();
@@ -84,10 +84,11 @@ class RegisterController extends Controller
 
             $admin->notify(new UserNotification(
                 subject: 'New User Registration',
-                message: 'A new user has registered with the email: ' . $user->email,
+                message: 'A new user has registered with the email: '.$user->email,
                 type: 'success',
                 user: $user
             ));
+
             return $this->success($user, 'Verification email sent', 201);
         } catch (\Exception $e) {
             return $this->error([], $e->getMessage(), 500);
@@ -106,7 +107,7 @@ class RegisterController extends Controller
 
         $user = User::where('email', $request->input('email'))->first();
 
-        if (!$user) {
+        if (! $user) {
             return $this->error([], 'User not found', 404);
         }
 
@@ -118,8 +119,8 @@ class RegisterController extends Controller
     public function verifyOtp(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email'    => 'required|email',
-            'otp'      => 'required|numeric',
+            'email' => 'required|email',
+            'otp' => 'required|numeric',
         ]);
 
         if ($validator->fails()) {
@@ -130,13 +131,13 @@ class RegisterController extends Controller
 
         $user = User::where('email', $request->input('email'))->first();
 
-        if (!$user) {
+        if (! $user) {
             return $this->error([], 'User not found', 404);
         }
 
         $otp = EmailOtp::where('user_id', $user->id)->first();
 
-        if (!$otp) {
+        if (! $otp) {
             return $this->error([], 'OTP not found', 404);
         }
 
@@ -159,7 +160,7 @@ class RegisterController extends Controller
 
         $admin->notify(new UserNotification(
             subject: 'User Email Verified',
-            message: 'A user has verified their email: ' . $user->email,
+            message: 'A user has verified their email: '.$user->email,
             type: 'success',
             user: $user
         ));

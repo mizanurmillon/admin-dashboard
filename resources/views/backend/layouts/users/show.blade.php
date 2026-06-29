@@ -99,12 +99,12 @@
                     <div class="social-img-wrap">
                         <div class="social-img">
                             @php
-                            $name = trim($user->name);
+                            $name = trim($user->first_name . ' ' . $user->last_name);
                             $firstLetter = $name !== '' ? mb_substr($name, 0, 1) : '';
                             @endphp
 
                             @if ($user->avatar)
-                            <img src="{{ asset($user->avatar) }}" alt="{{ $user->name }}">
+                            <img src="{{ asset($user->avatar) }}" alt="{{ $user->first_name }}">
                             @else
                             <div class="initials-avatar">{{ $firstLetter }}</div>
                             @endif
@@ -116,7 +116,7 @@
                         @endif
                     </div>
                     <div class="social-details">
-                        <h5 class="mb-1"><a href="social-app.html">{{ $user->name }}</a></h5><span class="f-light">{{ $user->email }}</span>
+                        <h5 class="mb-1"><a href="social-app.html">{{ $user->first_name }} {{ $user->last_name }}</a></h5><span class="f-light">{{ $user->email }}</span>
                         <ul class="card-social">
                             <li><a href="{{  $user->facebook_url ? $user->facebook_url : 'https://www.facebook.com/' }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
 

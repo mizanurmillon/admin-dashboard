@@ -8,10 +8,12 @@
         top: 19px;
         transform: translateY(-50%);
     }
+
     .img-container img {
         max-width: 100%;
         max-height: 500px;
     }
+
 </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet">
 @endpush
@@ -42,7 +44,7 @@
                                         @endphp
 
                                         <img class="rounded-circle profile-picture {{ $userDetails->avatar ? '' : 'd-none' }}" alt="" src="{{ $userDetails->avatar ? asset($userDetails->avatar) : '#' }}" style="width: 70px; height: 70px; object-fit: cover;">
-                                        
+
                                         @if(!$userDetails->avatar)
                                         <div class="profile-fallback d-flex align-items-center justify-content-center" style="background: #2b5f60; width: 70px; height: 70px; border-radius: 50%; color: #fff; font-size: 28px; font-weight: 700; text-transform: uppercase;">
                                             {{ $firstLetter }}
@@ -64,7 +66,7 @@
 
                                     <!-- User Details -->
                                     <div class="flex-grow-1">
-                                        <h3 class="mb-1 f-w-600">{{ $userDetails->name }}</h3>
+                                        <h3 class="mb-1 f-w-600">{{ $userDetails->first_name }} {{ $userDetails->last_name }}</h3>
                                         <p class="mb-0 text-muted">{{ $userDetails->role }}</p>
                                     </div>
                                 </div>
@@ -74,16 +76,27 @@
                             <form method="POST" action="{{ route('update.profile') }}">
                                 @csrf
                                 <div class="mb-3">
-                                    <label class="form-label">Name</label>
-                                    <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" placeholder="Enter your name" value="{{ $userDetails->name }}">
-                                    @error('name')
+                                    <label class="form-label">First Name</label>
+                                    <input class="form-control @error('first_name') is-invalid @enderror" type="text" name="first_name" placeholder="Enter Your First Name" value="{{ $userDetails->first_name }}">
+                                    @error('first_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
                                 </div>
+
                                 <div class="mb-3">
-                                    <label class="form-label">Email-Address</label>
+                                    <label class="form-label">Last Name</label>
+                                    <input class="form-control @error('last_name') is-invalid @enderror" type="text" name="last_name" placeholder="Enter your last name" value="{{ $userDetails->last_name }}">
+                                    @error('last_name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Email Address</label>
                                     <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Enter your Email" value="{{ $userDetails->email }}">
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -207,7 +220,7 @@
             const files = e.target.files;
             if (files && files.length > 0) {
                 const file = files[0];
-                
+
                 // Ensure the file is an image
                 if (!file.type.match('image.*')) {
                     toastr.error('Please select an image file.');
@@ -225,11 +238,11 @@
 
         $('#cropModal').on('shown.bs.modal', function() {
             cropper = new Cropper(image, {
-                aspectRatio: 1,
-                viewMode: 1,
-                autoCropArea: 1,
-                responsive: true,
-                background: false
+                aspectRatio: 1
+                , viewMode: 1
+                , autoCropArea: 1
+                , responsive: true
+                , background: false
             });
         }).on('hidden.bs.modal', function() {
             if (cropper) {
@@ -241,10 +254,10 @@
 
         $('#cropAndUpload').click(function() {
             if (!cropper) return;
-            
+
             cropper.getCroppedCanvas({
-                width: 400,
-                height: 400
+                width: 400
+                , height: 400
             }).toBlob(function(blob) {
                 const formData = new FormData();
                 formData.append('profile_picture', blob, 'profile.jpg');
@@ -255,12 +268,13 @@
                 btn.text('Uploading...').prop('disabled', true);
 
                 $.ajax({
-                    url: '{{ route('update.profile.picture') }}',
-                    type: 'POST',
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    success: function(data) {
+                    url: '{{ route('
+                    update.profile.picture ') }}'
+                    , type: 'POST'
+                    , data: formData
+                    , processData: false
+                    , contentType: false
+                    , success: function(data) {
                         if (data.success) {
                             let newImageUrl = data.image_url + '?v=' + new Date().getTime();
                             $('.profile-picture').attr('src', newImageUrl).removeClass('d-none');
@@ -270,17 +284,18 @@
                         } else {
                             toastr.error(data.message || 'Failed to update profile picture.');
                         }
-                    },
-                    error: function(xhr) {
+                    }
+                    , error: function(xhr) {
                         toastr.error('Something went wrong!');
                         console.log(xhr.responseText);
-                    },
-                    complete: function() {
+                    }
+                    , complete: function() {
                         btn.text(originalText).prop('disabled', false);
                     }
                 });
             }, 'image/jpeg', 0.9);
         });
     });
+
 </script>
 @endpush

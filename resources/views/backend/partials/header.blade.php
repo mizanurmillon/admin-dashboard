@@ -111,11 +111,11 @@
                 <li class="profile-nav onhover-dropdown pe-0 py-0">
                     <div class="d-flex align-items-center profile-media">
                         @php
-                        $name = trim(auth()->user()->name);
+                        $name = trim(auth()->user()->first_name . ' ' . auth()->user()->last_name);
                         $firstLetter = $name !== '' ? mb_substr($name, 0, 1) : '';
                         @endphp
 
-                        <img class="b-r-25 img-50 img-fluid profile-picture {{ auth()->user()->avatar ? '' : 'd-none' }}" src="{{ auth()->user()->avatar ? asset(auth()->user()->avatar) : '#' }}" alt="{{ auth()->user()->name }}">
+                        <img class="b-r-25 img-50 img-fluid profile-picture {{ auth()->user()->avatar ? '' : 'd-none' }}" src="{{ auth()->user()->avatar ? asset(auth()->user()->avatar) : '#' }}" alt="{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}">
 
                         @if(!auth()->user()->avatar)
                         <div class="b-r-25 img-50 profile-fallback" style="
@@ -136,7 +136,7 @@
                         @endif
 
 
-                        <div class="flex-grow-1 user"><span>{{ Auth::user()->name }}</span>
+                        <div class="flex-grow-1 user"><span>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span>
                             <p class="mb-0 font-nunito">{{ Auth::user()->role }}
                                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
                                     <g transform="matrix(0.5099999999999995,0,0,0.5099999999999995,7.839999649524694,7.839929203987129)">

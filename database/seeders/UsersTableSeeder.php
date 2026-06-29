@@ -2,11 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Str;
 
 class UsersTableSeeder extends Seeder
 {
@@ -17,7 +16,8 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'name' => 'Admin',
+                'first_name' => 'Admin',
+                'last_name' => null,
                 'email' => 'admin@admin.com',
                 'email_verified_at' => now(),
                 'password' => Hash::make('12345678'),
@@ -27,7 +27,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => now(),
             ],
             [
-                'name' => 'user',
+                'first_name' => 'user',
+                'last_name' => null,
                 'email' => 'user@user.com',
                 'email_verified_at' => now(),
                 'password' => Hash::make('12345678'),
@@ -37,7 +38,8 @@ class UsersTableSeeder extends Seeder
                 'created_at' => now(),
             ],
             [
-                'name' => 'Md Mizanur Rahman',
+                'first_name' => 'Md Mizanur',
+                'last_name' => 'Rahman',
                 'email' => 'mr7517218@gmail.com',
                 'email_verified_at' => now(),
                 'password' => Hash::make('12345678'),
